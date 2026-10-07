@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="E-Commerce Web/E-Commerce API.csproj" />
+  <Project Path="E-CommerceBTO/E-CommerceBTO.csproj" Id="3e4fbd2f-fa77-45a8-a7a4-d114b54c97c4" />
+  <Project Path="E-CommerceDTO/E-CommerceDTO.csproj" Id="d92fce10-0cd5-42f8-804c-213c5744ea43" />
+  <Project Path="E-CommerceTest/E-CommerceTest.csproj" Id="8021b564-719f-4335-aee4-477619caab39" />
+</Solution>

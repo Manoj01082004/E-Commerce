@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace E_CommerceDTO.DTO.CategoryDTO_s
+{
+    public class CategoryDTO
+    {
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public string? Description { get; set; }
+        public string? ImageUrl { get; set; }
+        public bool IsActive { get; set; }
+        public int DisplayOrder { get; set; }
+        public int? ParentCategoryId { get; set; }
+    }
+}
