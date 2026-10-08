@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using E_CommerceBTO.Services;
 using E_CommerceDTO.DTO.UserDTO_s;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace E_Commerce_Web.Controller
 {
@@ -16,17 +18,42 @@ namespace E_Commerce_Web.Controller
             _service = service;
             _mapper = mapper;
         }
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<UserDTO>> GetUserById(int id)
+        private int GetCurrentUserId()
         {
-            var user = await _service.GetUserByIdAsync(id);
-            if (user == null)
-                return NotFound();
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var userDTO = _mapper.Map<UserDTO>(user);
-            return Ok(userDTO);
+            if (!int.TryParse(userIdValue, out var userId))
+            {
+                throw new UnauthorizedAccessException("Invalid user token.");
+            }
+
+            return userId;
+        }
+        [HttpGet("me")]
+        [Authorize]
+        public async Task<ActionResult<UserDTO>> GetMyProfile()
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+                var user = await _service.GetUserByIdAsync(userId);
+                if (user == null)
+                    return NotFound();
+
+                var userDTO = _mapper.Map<UserDTO>(user);
+                return Ok(userDTO);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error {ex.Message}");
+            }
         }
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<ActionResult<UserDTO>> RegisterUser([FromBody] UserRegisterDTO userRegisterDTO)
         {
             if (userRegisterDTO == null)
@@ -35,10 +62,11 @@ namespace E_Commerce_Web.Controller
             if (user == null)
                 return Conflict("Email already exists");
             var userDTO = _mapper.Map<UserDTO>(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, userDTO);
+            return CreatedAtAction(nameof(GetMyProfile), new { id = user.Id }, userDTO);
         }
         [HttpPost("login")]
-        public async Task<ActionResult<UserDTO>> LoginUser([FromBody] UserLoginDTO userLoginDTO)
+        [AllowAnonymous]
+        public async Task<ActionResult<UserLoginResponseDTO>> LoginUser([FromBody] UserLoginDTO userLoginDTO)
         {
             if (userLoginDTO == null)
                 return BadRequest("User data is null");
@@ -47,8 +75,15 @@ namespace E_Commerce_Web.Controller
                 var user = await _service.LoginUserAsync(userLoginDTO);
                 if (user == null)
                     return Unauthorized("Invalid email or password");
-                var userDTO = _mapper.Map<UserDTO>(user);
-                return Ok(userDTO);
+
+                var token = _service.CreateToken(user);
+
+                var response = new UserLoginResponseDTO
+                {
+                    Token = token,
+                    User = _mapper.Map<UserDTO>(user)
+                };
+                return Ok(response);
             }
             catch (UnauthorizedAccessException ex)
             {

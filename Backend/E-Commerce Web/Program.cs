@@ -8,8 +8,11 @@ using E_CommerceDTO.DTO.ProductDTO_s;
 using E_CommerceDTO.DTO.UserDTO_s;
 using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 using Scalar.AspNetCore;
 using System.Text.Json.Serialization;
 
@@ -49,14 +52,36 @@ builder.Services.AddAutoMapper(o =>
     o.CreateMap<CartItemCreateDTO, CartItem>();
     o.CreateMap<CartItemUpdateDTO, CartItem>();
     o.CreateMap<Order, OrderDTO>();
-    o.CreateMap<OrderCreateDTO, Order>();
     o.CreateMap<OrderUpdateDTO, Order>();
 });
 
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
+var jwtkey = builder.Configuration["Jwt:Key"];
+var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
+if (string.IsNullOrWhiteSpace(jwtkey))
+    throw new InvalidOperationException("JWT key is missing.");
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtkey)),
+            // Ensure the role claim type used by the token handler is recognized when Authorize(Roles=...) is evaluated
+            RoleClaimType = ClaimTypes.Role,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+builder.Services.AddAuthorization();
+builder.Services.AddScoped<JWTTokenService>();
 var app = builder.Build();
 //await SeedDataAsync(app);
 
@@ -66,6 +91,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();
 

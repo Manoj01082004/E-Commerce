@@ -11,9 +11,11 @@ namespace E_CommerceBTO.Services
     public class UserService
     {
         private readonly UserRepository _repo;
-        public UserService(UserRepository repo)
+        private readonly JWTTokenService _jwtTokenService;
+        public UserService(UserRepository repo, JWTTokenService jwtTokenService)
         {
             _repo = repo;
+            _jwtTokenService = jwtTokenService;
         }
         public async Task<User?> GetUserByIdAsync(int id)
         {
@@ -30,9 +32,7 @@ namespace E_CommerceBTO.Services
             {
                 Name = userregisterDTO.Name,
                 Email = userregisterDTO.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userregisterDTO.PasswordHash),
-                Role = userregisterDTO.Role
-            };
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userregisterDTO.PasswordHash)            };
             await _repo.RegisterUserAsync(user);
             return user;
         }
@@ -47,6 +47,10 @@ namespace E_CommerceBTO.Services
                 throw new UnauthorizedAccessException("Invalid email or password.");
             }
             return user;
+        }
+        public string CreateToken(User user)
+        {
+             return _jwtTokenService.CreateToken(user);
         }
     }
 }

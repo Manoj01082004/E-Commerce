@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {}
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj",
+        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
         "projectName": "E-CommerceDTO",
-        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj",
+        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
         "packagesPath": "C:\\Users\\ManojHK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\obj\\",
+        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

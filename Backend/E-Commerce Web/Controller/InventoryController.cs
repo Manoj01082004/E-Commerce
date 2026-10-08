@@ -3,10 +3,12 @@ using E_CommerceBTO.Services;
 using E_CommerceDTO.DTO.InventoryDTO_s;
 using E_CommerceDTO.DTO.ProductDTO_s;
 using E_CommerceDTO.models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Web.Controller
 {
+    [Authorize(Roles = Roles.Admin)]
     [Route("api/inventory")]
     [ApiController]
     public class InventoryController:ControllerBase

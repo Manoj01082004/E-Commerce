@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceTest\\E-CommerceTest.csproj": {}
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\E-CommerceTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\E-Commerce API.csproj": {
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\E-Commerce API.csproj",
+        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj",
         "projectName": "E-Commerce API",
-        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\E-Commerce API.csproj",
+        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj",
         "packagesPath": "C:\\Users\\ManojHK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\obj\\",
+        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj"
               },
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj"
               }
             }
           }
@@ -523,14 +523,14 @@
         }
       }
     },
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj": {
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj",
+        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj",
         "projectName": "E-CommerceBTO",
-        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj",
+        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj",
         "packagesPath": "C:\\Users\\ManojHK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\obj\\",
+        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -552,8 +552,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj"
               }
             }
           }
@@ -586,6 +586,10 @@
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[10.0.12, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.23.0, )"
             }
           },
           "imports": [
@@ -882,14 +886,14 @@
         }
       }
     },
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj",
+        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
         "projectName": "E-CommerceDTO",
-        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj",
+        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
         "packagesPath": "C:\\Users\\ManojHK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\obj\\",
+        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1239,14 +1243,14 @@
         }
       }
     },
-    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceTest\\E-CommerceTest.csproj": {
+    "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\E-CommerceTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceTest\\E-CommerceTest.csproj",
+        "projectUniqueName": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\E-CommerceTest.csproj",
         "projectName": "E-CommerceTest",
-        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceTest\\E-CommerceTest.csproj",
+        "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\E-CommerceTest.csproj",
         "packagesPath": "C:\\Users\\ManojHK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceTest\\obj\\",
+        "outputPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1268,14 +1272,14 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\E-Commerce API.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-Commerce Web\\E-Commerce API.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj"
               },
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceBTO\\E-CommerceBTO.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj"
               },
-              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj": {
-                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\E-CommerceDTO\\E-CommerceDTO.csproj"
+              "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj": {
+                "projectPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj"
               }
             }
           }

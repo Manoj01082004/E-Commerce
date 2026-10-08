@@ -9,6 +9,7 @@ namespace E_CommerceDTO.DTO.UserDTO_s
     {
         [Required]
         [MaxLength(256)]
+        [EmailAddress]
         public required string Email { get; set; }
 
         [Required]

@@ -14,14 +14,11 @@ namespace E_CommerceDTO.DTO.UserDTO_s
 
         [Required]
         [MaxLength(256)]
+        [EmailAddress]
         public required string Email { get; set; }
 
         [Required]
         [MaxLength(255)]
         public required string PasswordHash { get; set; }
-
-        [Required]
-        [MaxLength(20)]
-        public string Role { get; set; } = Roles.Customer;
     }
 }

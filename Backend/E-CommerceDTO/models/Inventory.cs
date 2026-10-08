@@ -30,7 +30,7 @@ namespace E_CommerceDTO.models
 
         public DateTime? UpdatedAt { get; set; }
         [Timestamp]
-        public byte[] RowVersion { get; set; } = [];
+        public byte[] RowVersion { get; set; } = System.Array.Empty<byte>();
 
         [NotMapped]
         public int AvailableQuantity => QuantityOnHand - ReservedQuantity;

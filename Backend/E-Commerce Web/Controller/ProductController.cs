@@ -2,6 +2,7 @@
 using E_CommerceBTO.Services;
 using E_CommerceDTO.DTO.ProductDTO_s;
 using E_CommerceDTO.models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Web.Controller
@@ -50,6 +51,7 @@ namespace E_Commerce_Web.Controller
             }
         }
         [HttpPost]
+        [Authorize(Roles=Roles.Admin)]
         public async Task<ActionResult<ProductDTO>> CreateProduct([FromBody] ProductCreateDTO productCreateDTO)
         {
             try
@@ -71,6 +73,8 @@ namespace E_Commerce_Web.Controller
             }
         }
         [HttpPut("{id:int}")]
+        [Authorize(Roles = Roles.Admin)]
+
         public async Task<ActionResult<ProductDTO>> UpdateProduct(int id, [FromBody] ProductUpdateDTO productUpdateDTO)
         {
             try
@@ -95,6 +99,8 @@ namespace E_Commerce_Web.Controller
             }
         }
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = Roles.Admin)]
+
         public async Task<ActionResult<object>> DeleteProduct(int id)
         {
             try

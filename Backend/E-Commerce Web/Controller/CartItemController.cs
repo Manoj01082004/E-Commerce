@@ -2,10 +2,13 @@
 using E_CommerceBTO.Services;
 using E_CommerceDTO.DTO.CartItemDTO_s;
 using E_CommerceDTO.models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace E_Commerce_Web.Controller
 {
+    [Authorize]
     [Route("api/CartItems")]
     [ApiController]
     public class CartItemController : ControllerBase
@@ -17,17 +20,25 @@ namespace E_Commerce_Web.Controller
             _service = service;
             _mapper = mapper;
         }
-        [HttpGet("user/{userId:int}")]
-        public async Task<ActionResult<IEnumerable<CartItemDTO>>> GetCartItemsByUserId(int userId)
+        private int GetCurrentUserId()
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(userIdValue, out var userId))
+            {
+                throw new UnauthorizedAccessException("Invalid user token.");
+            }
+
+            return userId;
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CartItemDTO>>> GetCartItemsByUserId()
         {
             try
             {
-                if (userId <= 0)
-                {
-                    return BadRequest("Invalid user ID.");
-                }
+                var userId = GetCurrentUserId();
                 var cartItems = await _service.GetCartItemsByUserIdAsync(userId);
-                if (cartItems == null || !cartItems.Any())
+                if (!cartItems.Any())
                 {
                     return NotFound($"No cart items found for user ID {userId}.");
                 }
@@ -57,6 +68,10 @@ namespace E_Commerce_Web.Controller
                 var cartItemDTO = _mapper.Map<CartItemDTO>(cartItem);
                 return Ok(cartItemDTO);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
@@ -71,7 +86,13 @@ namespace E_Commerce_Web.Controller
                 {
                     return BadRequest("Invalid cart item data.");
                 }
-                var cartItem = _mapper.Map<CartItem>(cartItemCreateDTO);
+                var userId = GetCurrentUserId();
+                var cartItem = new CartItem
+                {
+                    UserId =userId,
+                    ProductId=cartItemCreateDTO.ProductId,
+                    Quantity=cartItemCreateDTO.Quantity
+                };
 
                 var savedCartItem = await _service.AddCartItemAsync(cartItem);
 
@@ -80,9 +101,9 @@ namespace E_Commerce_Web.Controller
                 var cartItemDTO = _mapper.Map<CartItemDTO>(cartItemWithProduct);
                 return Ok(cartItemDTO);
             }
-            catch (Exception ex)
+            catch (UnauthorizedAccessException ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Unauthorized(ex.Message);
             }
         }
         [HttpPut("{id:int}")]
@@ -134,15 +155,13 @@ namespace E_Commerce_Web.Controller
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-        [HttpDelete("clearItems/{userId:int}")]
-        public async Task<ActionResult> ClearCartItems(int userId)
+        [HttpDelete("clearItems")]
+        public async Task<ActionResult> ClearCartItems()
         {
             try
             {
-                if (userId <= 0)
-                {
-                    return BadRequest("Invalid user ID.");
-                }
+
+                var userId = GetCurrentUserId();
                 if (!await _service.ClearCartItemAsync(userId))
                 {
                     return NotFound($"No cart items found for user ID {userId}.");

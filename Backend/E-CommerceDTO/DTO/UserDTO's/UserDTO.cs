@@ -17,6 +17,7 @@ namespace E_CommerceDTO.DTO.UserDTO_s
         public required string Email { get; set; }
         [Required]
         [MaxLength(20)]
+        
         public string Role { get; set; } = Roles.Customer;
     }
 }
