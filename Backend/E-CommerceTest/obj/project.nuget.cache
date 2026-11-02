@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "89ZqeYROuGk=",
+  "dgSpecHash": "Cjgh4H2wBBQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceTest\\E-CommerceTest.csproj",
   "expectedPackageFiles": [
@@ -94,7 +94,7 @@
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.12\\system.diagnostics.eventlog.10.0.12.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.23.0\\system.identitymodel.tokens.jwt.8.23.0.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
-    "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
+    "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.14\\system.security.cryptography.pkcs.10.0.14.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",

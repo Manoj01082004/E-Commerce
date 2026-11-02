@@ -1,0 +1,53 @@
+:root {
+    --dark-bg: #171e2b;
+    --dark-card: #222c3d;
+    --dark-card-light: #2c374a;
+    --scallop: #ddb3a3;
+    --scallop-light: #f1d3c8;
+    --text-light: #f8f4f2;
+    --text-muted: #b5bdca;
+    --border-color: #3d4a60;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Toast notification colors */
+.Toastify__toast {
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.Toastify__toast--success {
+    background-color: #166534;
+    color: #ffffff;
+}
+
+.Toastify__toast--error {
+    background-color: #b91c1c;
+    color: #ffffff;
+}
+
+.Toastify__progress-bar--success {
+    background-color: #86efac;
+}
+
+.Toastify__progress-bar--error {
+    background-color: #fecaca;
+}

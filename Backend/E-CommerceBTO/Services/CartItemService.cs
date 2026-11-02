@@ -1,5 +1,6 @@
 ﻿using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,8 @@ namespace E_CommerceBTO.Services
 {
     public class CartItemService
     {
-        private readonly CartItemRepository _repo;
-        public CartItemService(CartItemRepository repo)
+        private readonly ICartItemRepository _repo;
+        public CartItemService(ICartItemRepository repo)
         {
             _repo = repo;   
         }

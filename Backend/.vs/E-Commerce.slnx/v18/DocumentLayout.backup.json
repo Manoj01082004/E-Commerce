@@ -3,32 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\controller\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\controller\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\controller\\cartitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\controller\\cartitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\dto\\userdto\u0027s\\userloginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\dto\\userdto\u0027s\\userloginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\controller\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\controller\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\dto\\userdto\u0027s\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\dto\\userdto\u0027s\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\dto\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\dto\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercebto\\services\\refreshtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|solutionrelative:e-commercebto\\services\\refreshtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\dto\\productdto\u0027s\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\dto\\productdto\u0027s\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\dto\\userdto\u0027s\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\dto\\userdto\u0027s\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercebto\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|solutionrelative:e-commercebto\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercebto\\e-commercebto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3E4FBD2F-FA77-45A8-A7A4-D114B54C97C4}|E-CommerceBTO\\E-CommerceBTO.csproj|solutionrelative:e-commercebto\\e-commercebto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\e-commercedto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\e-commercedto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,93 +95,255 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ECommerceDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs",
-              "RelativeDocumentMoniker": "E-CommerceDTO\\Context\\ECommerceDBContext.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs",
-              "RelativeToolTip": "E-CommerceDTO\\Context\\ECommerceDBContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwB8AAAC8AAAAAAAAAA==",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\OrderController.cs",
+              "RelativeDocumentMoniker": "E-Commerce Web\\Controller\\OrderController.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\OrderController.cs",
+              "RelativeToolTip": "E-Commerce Web\\Controller\\OrderController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAswF0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T05:02:06.644Z",
+              "WhenOpened": "2026-10-30T10:45:44.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\Inventory.cs",
-              "RelativeDocumentMoniker": "E-CommerceDTO\\models\\Inventory.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\Inventory.cs",
-              "RelativeToolTip": "E-CommerceDTO\\models\\Inventory.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAASwAAAAAAAAAAAAAAAAA==",
+              "Title": "CartItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\CartItemRepository.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\Repositories\\CartItemRepository.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\CartItemRepository.cs",
+              "RelativeToolTip": "E-CommerceDTO\\Repositories\\CartItemRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T05:01:58.581Z",
+              "WhenOpened": "2026-10-30T09:19:16.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs",
-              "RelativeDocumentMoniker": "E-Commerce Web\\Program.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs",
-              "RelativeToolTip": "E-Commerce Web\\Program.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
+              "Title": "CartItemController.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\CartItemController.cs",
+              "RelativeDocumentMoniker": "E-Commerce Web\\Controller\\CartItemController.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\CartItemController.cs",
+              "RelativeToolTip": "E-Commerce Web\\Controller\\CartItemController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T04:59:22.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserRegisterDTO.cs",
-              "RelativeDocumentMoniker": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserRegisterDTO.cs",
-              "RelativeToolTip": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserRegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T04:51:19.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JWTTokenService.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\JWTTokenService.cs",
-              "RelativeDocumentMoniker": "E-CommerceBTO\\Services\\JWTTokenService.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\JWTTokenService.cs",
-              "RelativeToolTip": "E-CommerceBTO\\Services\\JWTTokenService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAiwCQAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T04:25:54.888Z",
+              "WhenOpened": "2026-10-30T09:18:40.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\ProductController.cs",
-              "RelativeDocumentMoniker": "E-Commerce Web\\Controller\\ProductController.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\ProductController.cs",
-              "RelativeToolTip": "E-Commerce Web\\Controller\\ProductController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAgwDYAAABdAAAAAAAAAA==",
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "E-CommerceDTO\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T04:24:20.831Z",
+              "WhenOpened": "2026-10-30T09:18:35.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\DTO\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "RelativeToolTip": "E-CommerceDTO\\DTO\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T09:17:10.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserLoginResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserLoginResponseDTO.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserLoginResponseDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserLoginResponseDTO.cs",
+              "RelativeToolTip": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserLoginResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T05:23:07.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs",
+              "RelativeDocumentMoniker": "E-Commerce Web\\Program.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs",
+              "RelativeToolTip": "E-Commerce Web\\Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwEIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T09:30:44.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\UserController.cs",
               "RelativeDocumentMoniker": "E-Commerce Web\\Controller\\UserController.cs",
               "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\UserController.cs",
               "RelativeToolTip": "E-Commerce Web\\Controller\\UserController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowDgAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAADwv2AAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T04:02:08.546Z",
+              "WhenOpened": "2026-10-29T11:18:18.205Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "E-CommerceDTO\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T08:41:38.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RefreshTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\RefreshTokenService.cs",
+              "RelativeDocumentMoniker": "E-CommerceBTO\\Services\\RefreshTokenService.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\RefreshTokenService.cs",
+              "RelativeToolTip": "E-CommerceBTO\\Services\\RefreshTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T17:33:18.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserDTO.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserDTO.cs",
+              "RelativeToolTip": "E-CommerceDTO\\DTO\\UserDTO\u0027s\\UserDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T05:23:31.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JWTTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\JWTTokenService.cs",
+              "RelativeDocumentMoniker": "E-CommerceBTO\\Services\\JWTTokenService.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\Services\\JWTTokenService.cs",
+              "RelativeToolTip": "E-CommerceBTO\\Services\\JWTTokenService.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAEwDQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T09:20:51.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\ProductDTO\u0027s\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\DTO\\ProductDTO\u0027s\\ProductDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\DTO\\ProductDTO\u0027s\\ProductDTO.cs",
+              "RelativeToolTip": "E-CommerceDTO\\DTO\\ProductDTO\u0027s\\ProductDTO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T08:36:41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "E-CommerceDTO\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAwwCYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T17:31:40.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\models\\RefreshToken.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\RefreshToken.cs",
+              "RelativeToolTip": "E-CommerceDTO\\models\\RefreshToken.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T17:25:20.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\User.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\models\\User.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\models\\User.cs",
+              "RelativeToolTip": "E-CommerceDTO\\models\\User.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wB4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T17:27:18.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ECommerceDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\Context\\ECommerceDBContext.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs",
+              "RelativeToolTip": "E-CommerceDTO\\Context\\ECommerceDBContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwA4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T17:41:42.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\appsettings.json",
+              "RelativeDocumentMoniker": "E-Commerce Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\appsettings.json",
+              "RelativeToolTip": "E-Commerce Web\\appsettings.json",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAEwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-29T04:31:32.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "E-CommerceBTO.csproj",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj",
+              "RelativeDocumentMoniker": "E-CommerceBTO\\E-CommerceBTO.csproj",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceBTO\\E-CommerceBTO.csproj",
+              "RelativeToolTip": "E-CommerceBTO\\E-CommerceBTO.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-27T17:58:27.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "E-CommerceDTO.csproj",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
+              "RelativeDocumentMoniker": "E-CommerceDTO\\E-CommerceDTO.csproj",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\E-CommerceDTO.csproj",
+              "RelativeToolTip": "E-CommerceDTO\\E-CommerceDTO.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAWwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-27T17:58:27.099Z"
             }
           ]
         }

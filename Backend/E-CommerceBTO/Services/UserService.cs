@@ -2,6 +2,7 @@
 using E_CommerceDTO.DTO.UserDTO_s;
 using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,9 +11,9 @@ namespace E_CommerceBTO.Services
 {
     public class UserService
     {
-        private readonly UserRepository _repo;
+        private readonly IUserRepository _repo;
         private readonly JWTTokenService _jwtTokenService;
-        public UserService(UserRepository repo, JWTTokenService jwtTokenService)
+        public UserService(IUserRepository repo, JWTTokenService jwtTokenService)
         {
             _repo = repo;
             _jwtTokenService = jwtTokenService;

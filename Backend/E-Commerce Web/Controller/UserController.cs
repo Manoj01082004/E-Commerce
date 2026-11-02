@@ -12,10 +12,12 @@ namespace E_Commerce_Web.Controller
     public class UserController:ControllerBase
     {
         private readonly UserService _service;
+        private readonly RefreshTokenService _refreshTokenService;
         private readonly IMapper _mapper;
-        public UserController(UserService service, IMapper mapper)
+        public UserController(UserService service, RefreshTokenService refreshTokenService, IMapper mapper)
         {
             _service = service;
+            _refreshTokenService = refreshTokenService;
             _mapper = mapper;
         }
         private int GetCurrentUserId()
@@ -64,30 +66,129 @@ namespace E_Commerce_Web.Controller
             var userDTO = _mapper.Map<UserDTO>(user);
             return CreatedAtAction(nameof(GetMyProfile), new { id = user.Id }, userDTO);
         }
-        [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<ActionResult<UserLoginResponseDTO>> LoginUser([FromBody] UserLoginDTO userLoginDTO)
+        [HttpPost("login")]
+        public async Task<ActionResult<UserDTO>> LoginUser([FromBody] UserLoginDTO userLoginDTO)
         {
-            if (userLoginDTO == null)
-                return BadRequest("User data is null");
             try
             {
-                var user = await _service.LoginUserAsync(userLoginDTO);
-                if (user == null)
-                    return Unauthorized("Invalid email or password");
-
-                var token = _service.CreateToken(user);
-
-                var response = new UserLoginResponseDTO
+                if (userLoginDTO is null)
                 {
-                    Token = token,
-                    User = _mapper.Map<UserDTO>(user)
-                };
-                return Ok(response);
+                    return BadRequest("User data is null.");
+                }
+
+                var user = await _service.LoginUserAsync(userLoginDTO);
+
+                if (user is null)
+                {
+                    return Unauthorized("Invalid email or password.");
+                }
+
+                var accessToken = _service.CreateToken(user);
+
+                var refreshToken = await _refreshTokenService
+                    .CreateRefreshTokenAsync(user.Id);
+
+                Response.Cookies.Append("access_token", accessToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTimeOffset.UtcNow.AddMinutes(10)
+                });
+
+                Response.Cookies.Append("refresh_token", refreshToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTimeOffset.UtcNow.AddDays(7)
+                });
+
+                return Ok(_mapper.Map<UserDTO>(user));
             }
-            catch (UnauthorizedAccessException ex)
+            catch (Exception ex)
             {
-                return Unauthorized(ex.Message);
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [AllowAnonymous]
+        [HttpPost("logout")]
+        public async Task<IActionResult> LogoutUser()
+        {
+            var rawRefreshToken = Request.Cookies["refresh_token"];
+
+            if (!string.IsNullOrWhiteSpace(rawRefreshToken))
+            {
+                await _refreshTokenService.RevokeRefreshTokenAsync(rawRefreshToken);
+            }
+
+            Response.Cookies.Delete("access_token", new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            });
+
+            Response.Cookies.Delete("refresh_token", new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            });
+
+            return Ok(new
+            {
+                Message = "Logged out successfully."
+            });
+        }
+        [AllowAnonymous]
+        [HttpPost("refresh")]
+        public async Task<ActionResult<UserDTO>> RefreshToken()
+        {
+            try
+            {
+                var rawRefreshToken = Request.Cookies["refresh_token"];
+
+                if (string.IsNullOrWhiteSpace(rawRefreshToken))
+                {
+                    return Unauthorized("Refresh token is missing.");
+                }
+
+                var user = await _refreshTokenService
+                    .ValidateAndRotateRefreshTokenAsync(rawRefreshToken);
+
+                if (user is null)
+                {
+                    return Unauthorized("Refresh token is invalid or expired.");
+                }
+
+                var accessToken = _service.CreateToken(user);
+
+                var newRefreshToken = await _refreshTokenService
+                    .CreateRefreshTokenAsync(user.Id);
+
+                Response.Cookies.Append("access_token", accessToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTimeOffset.UtcNow.AddMinutes(15)
+                });
+
+                Response.Cookies.Append("refresh_token", newRefreshToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTimeOffset.UtcNow.AddDays(7)
+                });
+
+                return Ok(_mapper.Map<UserDTO>(user));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
     }

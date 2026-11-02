@@ -1,10 +1,11 @@
 ﻿using E_CommerceDTO.Context;
 using E_CommerceDTO.models;
+using E_CommerceDTO.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_CommerceDTO.Repositories
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly ECommerceDBContext _db;
 

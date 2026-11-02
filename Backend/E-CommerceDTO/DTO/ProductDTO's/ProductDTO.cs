@@ -21,5 +21,6 @@ namespace E_CommerceDTO.DTO.ProductDTO_s
         public int CategoryId { get; set; }
 
         public required string CategoryName { get; set; }
+        public int? AvailableQuantity { get; set; }
     }
 }

@@ -1,18 +1,19 @@
 ﻿using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
 
 namespace E_CommerceBTO.Services
 {
     public class OrderService
     {
-        private readonly OrderRepository _orderRepo;
-        private readonly CartItemRepository _cartItemRepo;
-        private readonly UserRepository _userRepo;
+        private readonly IOrderRepository _orderRepo;
+        private readonly ICartItemRepository _cartItemRepo;
+        private readonly IUserRepository _userRepo;
 
         public OrderService(
-            OrderRepository orderRepo,
-            CartItemRepository cartItemRepo,
-            UserRepository userRepo)
+            IOrderRepository orderRepo,
+            ICartItemRepository cartItemRepo,
+            IUserRepository userRepo)
         {
             _orderRepo = orderRepo;
             _cartItemRepo = cartItemRepo;

@@ -1,5 +1,6 @@
 ﻿using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,8 @@ namespace E_CommerceBTO.Services
 {
     public class InventoryService
     {
-        private readonly InventoryRepository _repo;
-        public InventoryService(InventoryRepository repo)
+        private readonly IInventoryRepository _repo;
+        public InventoryService(IInventoryRepository repo)
         {
             _repo = repo;
         }

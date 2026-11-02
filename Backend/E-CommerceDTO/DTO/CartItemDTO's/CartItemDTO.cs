@@ -1,11 +1,4 @@
-﻿using E_CommerceDTO.models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
-namespace E_CommerceDTO.DTO.CartItemDTO_s
+﻿namespace E_CommerceDTO.DTO.CartItemDTO_s
 {
     public class CartItemDTO
     {
@@ -14,8 +7,15 @@ namespace E_CommerceDTO.DTO.CartItemDTO_s
         public int UserId { get; set; }
 
         public int ProductId { get; set; }
+
         public string? ProductName { get; set; }
 
-        public int Quantity { get; set; } = 1;
+        public string? ProductImageUrl { get; set; }
+
+        public decimal ProductPrice { get; set; }
+
+        public int? AvailableQuantity { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

@@ -1,0 +1,100 @@
+﻿using E_CommerceDTO.models;
+using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
+
+namespace E_CommerceBTO.Services
+{
+    public class PaymentService
+    {
+        private readonly IPaymentRepository _paymentRepo;
+        private readonly IOrderRepository _orderRepo;
+
+        public PaymentService(
+            IPaymentRepository paymentRepo,
+            IOrderRepository orderRepo)
+        {
+            _paymentRepo = paymentRepo;
+            _orderRepo = orderRepo;
+        }
+
+        public async Task<Payment?> GetPaymentByIdAsync(int id)
+        {
+            return await _paymentRepo.GetPaymentByIdAsync(id);
+        }
+
+        public async Task<Payment?> CreatePaymentAsync(
+            int userId,
+            int orderId,
+            string paymentMethod)
+        {
+            var order = await _orderRepo.GetOrderByIdAsync(orderId);
+
+            if (order is null || order.UserId != userId)
+            {
+                return null;
+            }
+
+            var existingPayment = await _paymentRepo.GetPaymentByOrderIdAsync(orderId);
+
+            if (existingPayment is not null)
+            {
+                throw new InvalidOperationException(
+                    "Payment already exists for this order.");
+            }
+
+            if (order.Status != OrderStatus.Pending)
+            {
+                throw new InvalidOperationException(
+                    "Payment can only be created for a pending order.");
+            }
+
+            var payment = new Payment
+            {
+                OrderId = order.Id,
+                Amount = order.TotalAmount,
+                PaymentMethod = paymentMethod.Trim(),
+                Status = PaymentStatus.Pending,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            await _paymentRepo.CreatePaymentAsync(payment);
+
+            return payment;
+        }
+
+        public async Task<Payment?> CompletePaymentAsync(
+            int userId,
+            int paymentId,
+            string transactionId)
+        {
+            var payment = await _paymentRepo.GetPaymentByIdAsync(paymentId);
+
+            if (payment is null || payment.Order is null)
+            {
+                return null;
+            }
+
+            if (payment.Order.UserId != userId)
+            {
+                return null;
+            }
+
+            if (payment.Status != PaymentStatus.Pending)
+            {
+                throw new InvalidOperationException(
+                    "This payment cannot be completed.");
+            }
+
+            payment.Status = PaymentStatus.Completed;
+            payment.TransactionId = transactionId.Trim();
+            payment.PaidAt = DateTime.UtcNow;
+
+            payment.Order.Status = OrderStatus.Paid;
+            payment.Order.UpdatedAt = DateTime.UtcNow;
+
+            await _paymentRepo.CompletePaymentAsync( payment,payment.Order);
+
+            return payment;
+        }
+    }
+}

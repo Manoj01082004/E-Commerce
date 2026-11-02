@@ -548,7 +548,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.11",
           "System.IdentityModel.Tokens.Jwt": "8.23.0",
-          "System.Security.Cryptography.Pkcs": "9.0.11"
+          "System.Security.Cryptography.Pkcs": "10.0.14"
         },
         "runtime": {
           "lib/net9.0/Microsoft.Data.SqlClient.dll": {
@@ -1671,7 +1671,8 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.12",
           "Microsoft.AspNetCore.OpenApi": "10.0.12",
           "Scalar.AspNetCore": "2.17.13",
-          "Serilog.AspNetCore": "10.0.0"
+          "Serilog.AspNetCore": "10.0.0",
+          "System.Security.Cryptography.Pkcs": "10.0.14"
         },
         "runtime": {
           "E-Commerce API.dll": {
@@ -1689,7 +1690,8 @@
           "E-CommerceDTO": "1.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "10.0.12",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.12",
-          "System.IdentityModel.Tokens.Jwt": "8.23.0"
+          "System.IdentityModel.Tokens.Jwt": "8.23.0",
+          "System.Security.Cryptography.Pkcs": "10.0.14"
         },
         "runtime": {
           "E-CommerceBTO.dll": {
@@ -1704,7 +1706,8 @@
       "E-CommerceDTO/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "10.0.12",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12",
+          "System.Security.Cryptography.Pkcs": "10.0.14"
         },
         "runtime": {
           "E-CommerceDTO.dll": {
@@ -3808,9 +3811,9 @@
       "System.Diagnostics.EventLog/10.0.12": {
         "compileOnly": true
       },
-      "System.Security.Cryptography.Pkcs/9.0.11": {
+      "System.Security.Cryptography.Pkcs/10.0.14": {
         "compile": {
-          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {}
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {}
         },
         "compileOnly": true
       },
@@ -6057,12 +6060,12 @@
       "path": "system.diagnostics.eventlog/10.0.12",
       "hashPath": "system.diagnostics.eventlog.10.0.12.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/9.0.11": {
+    "System.Security.Cryptography.Pkcs/10.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YS2YqtN6fFjlTDIQI+ucjbbrEvwMn796r+VLTQRr/5Oy6g+i+m7nIou83KnJCnAcKna2I+5eVJRks6SoHSpetQ==",
-      "path": "system.security.cryptography.pkcs/9.0.11",
-      "hashPath": "system.security.cryptography.pkcs.9.0.11.nupkg.sha512"
+      "sha512": "sha512-Wz+IgL2xpg8KJ4i2VWj6uz1PmZNu4Q0Ljlwd73P9Vze5NcOBtctLii3itV0PB2MpOqwqDEGfB6RCdv94A4E5yQ==",
+      "path": "system.security.cryptography.pkcs/10.0.14",
+      "hashPath": "system.security.cryptography.pkcs.10.0.14.nupkg.sha512"
     },
     "xunit.analyzers/1.18.0": {
       "type": "package",

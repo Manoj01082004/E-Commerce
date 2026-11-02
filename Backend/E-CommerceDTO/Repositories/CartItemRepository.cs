@@ -1,4 +1,5 @@
 ﻿using E_CommerceDTO.Context;
+using E_CommerceDTO.Repositories.Interfaces;
 using E_CommerceDTO.models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace E_CommerceDTO.Repositories
 {
-    public class CartItemRepository
+    public class CartItemRepository : ICartItemRepository
     {
         private readonly ECommerceDBContext _db;
         public CartItemRepository(ECommerceDBContext db)
@@ -19,12 +20,14 @@ namespace E_CommerceDTO.Repositories
             return await _db.CartItems
                 .Where(ci => ci.UserId == userId)
                 .Include(ci => ci.Product)
+                .ThenInclude(product=> product.Inventory)
                 .ToListAsync();
         }
         public async Task<CartItem?> GetCartItemByIdAsync(int id)
         {
             return await _db.CartItems
                 .Include(ci => ci.Product)
+                .ThenInclude(product => product.Inventory)
                 .FirstOrDefaultAsync(ci => ci.Id == id);
         }
         public async Task<CartItem?> GetCartItemByUserAndProductAsync(int userId,int productId)

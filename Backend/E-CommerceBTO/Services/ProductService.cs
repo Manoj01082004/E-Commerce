@@ -1,5 +1,6 @@
 ﻿using E_CommerceDTO.models;
 using E_CommerceDTO.Repositories;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,8 @@ namespace E_CommerceBTO.Services
 {
     public class ProductService
     {
-        private readonly ProductRepository _repo;
-        public ProductService(ProductRepository repo)
+        private readonly IProductRepository _repo;
+        public ProductService(IProductRepository repo)
         {
             _repo = repo;
         }

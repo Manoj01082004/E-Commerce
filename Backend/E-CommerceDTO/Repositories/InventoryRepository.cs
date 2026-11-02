@@ -1,5 +1,6 @@
 ﻿using E_CommerceDTO.Context;
 using E_CommerceDTO.models;
+using E_CommerceDTO.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace E_CommerceDTO.Repositories
 {
-    public class InventoryRepository
+    public class InventoryRepository : IInventoryRepository
     {
         private readonly ECommerceDBContext _db;
         public InventoryRepository(ECommerceDBContext db)

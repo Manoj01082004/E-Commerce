@@ -1,0 +1,70 @@
+﻿using E_CommerceDTO.models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace E_CommerceDTO.Context
+{
+    public class ECommerceDBContext(DbContextOptions<ECommerceDBContext> options) : DbContext(options)
+    {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Seed Categories
+            var categorySeedDate = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "Electronics", Description = "Electronic devices and accessories", DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 2, Name = "Clothing", Description = "Apparel for men and women", DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 3, Name = "Home & Kitchen", Description = "Products for your home and kitchen", DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 4, Name = "Beauty & Personal Care", Description = "Beauty and personal care products", DisplayOrder = 4, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 5, Name = "Sports & Fitness", Description = "Sports equipment and fitness products", DisplayOrder = 5, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 6, Name = "Books", Description = "Books and reading materials", DisplayOrder = 6, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 7, Name = "Toys & Games", Description = "Toys and games for all ages", DisplayOrder = 7, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 8, Name = "Grocery", Description = "Food and grocery products", DisplayOrder = 8, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 101, Name = "Mobile Phones", Description = "Smartphones and mobile phones", ParentCategoryId = 1, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 102, Name = "Laptops", Description = "Laptops and notebooks", ParentCategoryId = 1, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 103, Name = "Audio", Description = "Headphones, speakers, and audio accessories", ParentCategoryId = 1, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 201, Name = "Men's Clothing", Description = "Clothing for men", ParentCategoryId = 2, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 202, Name = "Women's Clothing", Description = "Clothing for women", ParentCategoryId = 2, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 203, Name = "Kids' Clothing", Description = "Clothing for children", ParentCategoryId = 2, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 301, Name = "Furniture", Description = "Furniture for every room", ParentCategoryId = 3, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 302, Name = "Kitchen Appliances", Description = "Appliances for your kitchen", ParentCategoryId = 3, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 303, Name = "Home Decor", Description = "Decorations and accessories for your home", ParentCategoryId = 3, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 401, Name = "Skincare", Description = "Skincare products", ParentCategoryId = 4, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 402, Name = "Haircare", Description = "Haircare products", ParentCategoryId = 4, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 403, Name = "Makeup", Description = "Makeup and cosmetics", ParentCategoryId = 4, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 501, Name = "Exercise Equipment", Description = "Equipment for home and gym workouts", ParentCategoryId = 5, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 502, Name = "Outdoor Sports", Description = "Products for outdoor sports", ParentCategoryId = 5, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 503, Name = "Sportswear", Description = "Clothing and accessories for sports", ParentCategoryId = 5, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 601, Name = "Fiction", Description = "Fiction books and novels", ParentCategoryId = 6, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 602, Name = "Non-Fiction", Description = "Non-fiction books", ParentCategoryId = 6, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 603, Name = "Children's Books", Description = "Books for children", ParentCategoryId = 6, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 701, Name = "Action Figures", Description = "Action figures and collectibles", ParentCategoryId = 7, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 702, Name = "Board Games", Description = "Board games for family and friends", ParentCategoryId = 7, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 703, Name = "Puzzles", Description = "Puzzles for children and adults", ParentCategoryId = 7, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true },
+
+                new Category { Id = 801, Name = "Snacks", Description = "Packaged snacks and treats", ParentCategoryId = 8, DisplayOrder = 1, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 802, Name = "Beverages", Description = "Drinks and beverages", ParentCategoryId = 8, DisplayOrder = 2, CreatedAt = categorySeedDate, IsActive = true },
+                new Category { Id = 803, Name = "Staples", Description = "Everyday grocery staples", ParentCategoryId = 8, DisplayOrder = 3, CreatedAt = categorySeedDate, IsActive = true }
+            );
+        }
+    }
+}

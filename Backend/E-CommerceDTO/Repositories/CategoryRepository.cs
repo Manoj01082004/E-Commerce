@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using E_CommerceDTO.Context;
 using E_CommerceDTO.models;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace E_CommerceDTO.Repositories
 {
-    public class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly ECommerceDBContext _db;
         public CategoryRepository(ECommerceDBContext db)

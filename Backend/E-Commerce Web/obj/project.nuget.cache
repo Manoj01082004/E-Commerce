@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2dPhxJhz40s=",
+  "dgSpecHash": "YgZ8+zrTkHY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\E-Commerce API.csproj",
   "expectedPackageFiles": [
@@ -66,7 +66,7 @@
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.11\\system.configuration.configurationmanager.9.0.11.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.23.0\\system.identitymodel.tokens.jwt.8.23.0.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
-    "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
+    "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.14\\system.security.cryptography.pkcs.10.0.14.nupkg.sha512",
     "C:\\Users\\ManojHK\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
   "logs": []

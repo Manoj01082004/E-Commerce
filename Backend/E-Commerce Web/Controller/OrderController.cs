@@ -72,21 +72,26 @@ namespace E_Commerce_Web.Controller
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-        [HttpGet("my-order")]
+        [HttpGet("my-orders")]
         public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrdersByUserId()
         {
             try
             {
                 var userId = GetCurrentUserId();
+
                 var orders = await _service.GetOrdersByUserIdAsync(userId);
+
                 if (!orders.Any())
                 {
                     return NotFound("No orders found for the specified user.");
                 }
-                var orderDTOs = orders.Select(o => _mapper.Map<OrderDTO>(o));
+
+                var orderDTOs = orders.Select(order =>
+                    _mapper.Map<OrderDTO>(order));
+
                 return Ok(orderDTOs);
             }
-            catch(UnauthorizedAccessException ex)
+            catch (UnauthorizedAccessException ex)
             {
                 return Unauthorized(ex.Message);
             }

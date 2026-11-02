@@ -1,5 +1,6 @@
 ﻿using E_CommerceDTO.Context;
 using E_CommerceDTO.models;
+using E_CommerceDTO.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_CommerceDTO.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ECommerceDBContext _db;
         public UserRepository(ECommerceDBContext db)
@@ -27,6 +28,25 @@ namespace E_CommerceDTO.Repositories
         {
              await _db.Users.AddAsync(user);
              await _db.SaveChangesAsync();
-        }      
+        }
+        public async Task CreateRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            await _db.RefreshTokens.AddAsync(refreshToken);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<RefreshToken?> GetRefreshTokenByHashAsync(string tokenHash)
+        {
+            return await _db.RefreshTokens
+                .Include(refreshToken => refreshToken.User)
+                .FirstOrDefaultAsync(refreshToken =>
+                    refreshToken.TokenHash == tokenHash);
+        }
+
+        public async Task UpdateRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            _db.RefreshTokens.Update(refreshToken);
+            await _db.SaveChangesAsync();
+        }
     }
 }

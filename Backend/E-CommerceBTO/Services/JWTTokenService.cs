@@ -19,9 +19,10 @@ namespace E_CommerceBTO.Services
         public string CreateToken(User user)
         {
             var key= _configuration["Jwt:Key"];
+            var EncryptionKey = _configuration["Jwt:EncryptionKey"];
             var issuer = _configuration["Jwt:Issuer"];
             var audience = _configuration["Jwt:Audience"];
-            if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(issuer) || string.IsNullOrWhiteSpace(audience))
+            if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(EncryptionKey) || string.IsNullOrWhiteSpace(issuer) || string.IsNullOrWhiteSpace(audience))
             {
                 throw new InvalidOperationException("JWT configuration is missing or invalid.");
             }
@@ -30,22 +31,34 @@ namespace E_CommerceBTO.Services
                 new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
                 new Claim(ClaimTypes.Name,user.Name),
                 new Claim(ClaimTypes.Email,user.Email),
-                // Add role claims using both the ClaimTypes URI and common JWT names so
-                // ASP.NET role checks and JWT consumers both recognize the role.
                 new Claim(ClaimTypes.Role, user.Role),
-                //new Claim("role", user.Role),
-                //new Claim("roles", user.Role)
             };
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-            var token= new JwtSecurityToken(
-                issuer: issuer,
-                audience: audience,
-                claims: claims,
-                expires: DateTime.Now.AddHours(24),
-                signingCredentials: credentials
-            );
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var signingKeyBytes = Encoding.UTF8.GetBytes(key);
+            var encryptionKeyBytes = Encoding.UTF8.GetBytes(EncryptionKey);
+            if (signingKeyBytes.Length < 32)
+            {
+                throw new InvalidOperationException("Jwt:Key must be at least 32 bytes long.");
+            }
+            if (encryptionKeyBytes.Length != 32)
+            {
+                throw new InvalidOperationException("Jwt:EncryptionKey must be exactly 32 bytes long when using Aes256KW.");
+            }
+            var securityKey = new SymmetricSecurityKey(signingKeyBytes);
+            var securityEncryptionKey = new SymmetricSecurityKey(encryptionKeyBytes);
+            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var encryptingCredentials = new EncryptingCredentials(securityEncryptionKey, SecurityAlgorithms.Aes256KW, SecurityAlgorithms.Aes256CbcHmacSha512);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddMinutes(15),
+                SigningCredentials = signingCredentials,
+                EncryptingCredentials = encryptingCredentials
+            };
+            tokenDescriptor.Issuer = issuer;
+            tokenDescriptor.Audience = audience;
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }   
