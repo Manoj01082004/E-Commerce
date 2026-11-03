@@ -1,0 +1,78 @@
+﻿using OrderServices.Data;
+using OrderServices.Models;
+using OrderServices.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace OrderServices.Repository
+{
+    public class OrderRepository : IOrderRepository
+    {
+        private readonly OrderDbContext _db;
+
+        public OrderRepository(OrderDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync()
+        {
+            return await _db.Orders
+                .Include(order => order.OrderItems)
+                .ToListAsync();
+        }
+
+        public async Task<Order?> GetOrderByIdAsync(int id)
+        {
+            return await _db.Orders
+                .Include(order => order.OrderItems)
+                .Include(order => order.Payment)
+                .FirstOrDefaultAsync(order => order.Id == id);
+        }
+
+        public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(int userId)
+        {
+            return await _db.Orders
+                .Where(order => order.UserId == userId)
+                .Include(order => order.OrderItems)
+                .ToListAsync();
+        }
+
+        public async Task CreateOrderFromCartAsync(Order order,ICollection<CartItem> cartItems)
+        {
+            await using var transaction = await _db.Database.BeginTransactionAsync();
+
+            try
+            {
+                await _db.Orders.AddAsync(order);
+
+                _db.CartItems.RemoveRange(cartItems);
+
+                await _db.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
+
+        public async Task UpdateOrderAsync(Order order)
+        {
+            _db.Orders.Update(order);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task DeleteOrderAsync(int id)
+        {
+            var order = await _db.Orders.FindAsync(id);
+
+            if (order is not null)
+            {
+                _db.Orders.Remove(order);
+                await _db.SaveChangesAsync();
+            }
+        }
+    }
+}

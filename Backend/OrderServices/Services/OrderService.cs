@@ -1,0 +1,129 @@
+﻿using OrderServices.Clients;
+using OrderServices.Models;
+using OrderServices.Repository.Interfaces;
+
+namespace OrderServices.Services
+{
+    public class OrderService
+    {
+        private readonly IOrderRepository _orderRepo;
+        private readonly ICartItemRepository _cartItemRepo;
+        private readonly ProductServiceClient _productServiceClient;
+
+        public OrderService(
+            IOrderRepository orderRepo,
+            ICartItemRepository cartItemRepo,
+            ProductServiceClient productServiceClient)
+        {
+            _orderRepo = orderRepo;
+            _cartItemRepo = cartItemRepo;
+            _productServiceClient = productServiceClient;
+        }
+
+        public async Task<ICollection<Order>> GetAllOrdersAsync()
+        {
+            return (await _orderRepo.GetAllOrdersAsync()).ToList();
+        }
+
+        public async Task<Order?> GetOrderByIdAsync(int id)
+        {
+            return await _orderRepo.GetOrderByIdAsync(id);
+        }
+
+        public async Task<ICollection<Order>> GetOrdersByUserIdAsync(
+            int userId)
+        {
+            return (await _orderRepo.GetOrdersByUserIdAsync(userId)).ToList();
+        }
+
+        public async Task<Order?> CreateOrderFromCartAsync(
+            int userId,
+            string shippingAddress)
+        {
+            var cartItems = await _cartItemRepo
+                .GetCartItemsByUserIdAsync(userId);
+
+            if (!cartItems.Any())
+            {
+                throw new InvalidOperationException("Cart is empty.");
+            }
+
+            var order = new Order
+            {
+                OrderNumber = GenerateOrderNumber(),
+                UserId = userId,
+                ShippingAddress = shippingAddress.Trim(),
+                Status = OrderStatus.Pending
+            };
+
+            foreach (var cartItem in cartItems)
+            {
+                var product = await _productServiceClient
+                    .GetProductByIdAsync(cartItem.ProductId);
+
+                if (product is null || !product.IsActive)
+                {
+                    throw new InvalidOperationException(
+                        $"Product with ID {cartItem.ProductId} is not available.");
+                }
+
+                if (cartItem.Quantity > product.AvailableQuantity)
+                {
+                    throw new InvalidOperationException(
+                        $"Out of stock for {product.Name}. " +
+                        "Please reduce the quantity or remove the item.");
+                }
+
+                var orderItem = new OrderItem
+                {
+                    ProductId = product.ProductId,
+                    ProductName = product.Name,
+                    UnitPrice = product.Price,
+                    Quantity = cartItem.Quantity
+                };
+
+                order.OrderItems.Add(orderItem);
+            }
+
+            order.TotalAmount = order.OrderItems.Sum(orderItem =>
+                orderItem.UnitPrice * orderItem.Quantity);
+
+            await _orderRepo.CreateOrderFromCartAsync(
+                order,
+                cartItems);
+
+            return order;
+        }
+
+        public async Task UpdateOrderAsync(Order order)
+        {
+            order.UpdatedAt = DateTime.UtcNow;
+
+            await _orderRepo.UpdateOrderAsync(order);
+        }
+
+        public async Task<bool> DeleteOrderAsync(int id)
+        {
+            var order = await _orderRepo.GetOrderByIdAsync(id);
+
+            if (order is null)
+            {
+                return false;
+            }
+
+            await _orderRepo.DeleteOrderAsync(id);
+
+            return true;
+        }
+
+        private static string GenerateOrderNumber()
+        {
+            var randomValue = Guid.NewGuid()
+                .ToString("N")
+                .Substring(0, 8)
+                .ToUpperInvariant();
+
+            return $"ORD-{DateTime.UtcNow:yyyyMMdd}-{randomValue}";
+        }
+    }
+}

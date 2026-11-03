@@ -1,0 +1,45 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
+
+namespace ProductServices.Models
+{
+
+    public class Category
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public required string Name { get; set; }
+
+
+
+        [MaxLength(1000)]
+        public string? Description { get; set; }
+
+        [MaxLength(500)]
+        public string? ImageUrl { get; set; }
+        public bool IsActive { get; set; } = true;
+
+        public int DisplayOrder { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public DateTime? UpdatedAt { get; set; }
+
+        public int? ParentCategoryId { get; set; }
+        [ForeignKey(nameof(ParentCategoryId))]
+        [DeleteBehavior(DeleteBehavior.Restrict)]
+        public Category? ParentCategory { get; set; }
+
+        [InverseProperty(nameof(ParentCategory))]
+        public ICollection<Category> SubCategories { get; set; } = new List<Category>();
+
+        public ICollection<Product> Products { get; set; } = new List<Product>();
+    }
+}

@@ -1,0 +1,48 @@
+﻿using UserServices.Data;
+using UserServices.Models;
+using UserServices.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace UserServices.Repositories
+{
+    public class UserRepository : IUserRepository
+    {
+        private readonly UserDbContext _db;
+        public UserRepository(UserDbContext db)
+        {
+            _db = db;
+        }
+        public async Task<User?> GetUserByIdAsync(int id)
+        {
+            return await _db.Users.FindAsync(id);
+        }
+        public async Task<User?> GetUserByEmailAsync(string email)
+        {
+            return await _db.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+        public async Task RegisterUserAsync(User user)
+        {
+             await _db.Users.AddAsync(user);
+             await _db.SaveChangesAsync();
+        }
+        public async Task CreateRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            await _db.RefreshTokens.AddAsync(refreshToken);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<RefreshToken?> GetRefreshTokenByHashAsync(string tokenHash)
+        {
+            return await _db.RefreshTokens
+                .Include(refreshToken => refreshToken.User)
+                .FirstOrDefaultAsync(refreshToken =>
+                    refreshToken.TokenHash == tokenHash);
+        }
+
+        public async Task UpdateRefreshTokenAsync(RefreshToken refreshToken)
+        {
+            _db.RefreshTokens.Update(refreshToken);
+            await _db.SaveChangesAsync();
+        }
+    }
+}

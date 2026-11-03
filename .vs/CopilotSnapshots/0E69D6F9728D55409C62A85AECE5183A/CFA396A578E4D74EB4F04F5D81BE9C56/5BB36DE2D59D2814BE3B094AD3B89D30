@@ -1,0 +1,15 @@
+﻿# 01-product-services-vulnerability-review: Review OrderServices package vulnerabilities
+
+Inspect `Backend/OrderServices/OrderServices.csproj`, package references, restore metadata, NuGet configuration, and the resolved dependency graph. Upgrade only packages with known vulnerabilities to secure compatible stable versions; keep the change minimal and leave unrelated services and solution-wide dependencies untouched.
+
+## Research findings
+
+- Scope is `Backend/OrderServices/OrderServices.csproj`, an SDK-style `net10.0` project.
+- `get_project_dependencies` confirms standard per-project package management; no central package management applies. Direct package references are defined in `Backend/OrderServices/OrderServices.csproj`.
+- The project file declares AutoMapper 16.2.0, Microsoft.AspNetCore.Authentication.JwtBearer 10.0.14, Microsoft.AspNetCore.OpenApi 10.0.14, Microsoft.EntityFrameworkCore.Design/SqlServer/Tools 10.0.14, and Scalar.AspNetCore 2.18.7.
+- After restore, `dotnet list package --include-transitive` reports the effective graph as Microsoft.AspNetCore.OpenApi 10.0.14 with Microsoft.OpenApi 2.12.2. The current sources are `https://api.nuget.org/v3/index.json` and the local Microsoft SDK feed.
+- `dotnet list package --vulnerable --include-transitive` completed successfully and reports: “The given project `OrderServices` has no vulnerable packages given the current sources.”
+- `dotnet build Backend/OrderServices/OrderServices.csproj` completed successfully for `net10.0` with no errors or warnings and produced `Backend/OrderServices/bin/Debug/net10.0/OrderServices.dll`.
+- No package or source-code edit is required because the current direct/transitive graph is already secure. The only workflow artifact changes are scope and findings updates; unrelated pending changes under `Backend/OrderServices` and `Backend/ProductServices` are preserved.
+
+**Done when**: OrderServices restore and build succeed, the vulnerability scan reports no remaining advisories, and no unrelated project or configuration changes are made. If the current graph is already secure, document that no package edit is required.

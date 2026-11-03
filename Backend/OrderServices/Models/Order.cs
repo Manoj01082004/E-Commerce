@@ -1,0 +1,37 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace OrderServices.Models
+{
+    [Index(nameof(OrderNumber), IsUnique = true)]
+    public class Order
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public required string OrderNumber { get; set; }
+
+        public int UserId { get; set; }
+
+
+        [Required]
+        [MaxLength(20)]
+        public string Status { get; set; } = OrderStatus.Pending;
+
+        [Precision(18, 2)]
+        public decimal TotalAmount { get; set; }
+
+        [Required]
+        [MaxLength(500)]
+        public required string ShippingAddress { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public DateTime? UpdatedAt { get; set; }
+        public Payment? Payment { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    }
+}

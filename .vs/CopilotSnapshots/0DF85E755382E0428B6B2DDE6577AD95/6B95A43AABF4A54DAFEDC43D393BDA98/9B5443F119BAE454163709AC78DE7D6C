@@ -1,0 +1,19 @@
+﻿# NuGet Package Upgrade
+
+## Preferences
+- **Flow Mode**: Automatic
+- **Scope**: `Backend/E-Commerce.slnx`
+- **Package**: `System.Security.Cryptography.Pkcs`
+- **Target Version**: `9.0.21`
+- **Pending Changes**: Preserve unrelated changes in place; do not commit, stash, or reset them.
+
+## Source Control
+- **Source Branch**: `microservices`
+- **Working Branch**: `microservices` (current branch)
+- **Commit Strategy**: Manual
+- **Branch Sync**: Disabled
+
+## Decisions
+- Use a per-project `PackageReference` because no central package management file was found.
+- Apply the minimal fix only to `Backend/UserServices/UserServices.csproj`; retain unrelated existing package versions, including 10.0.14 references in other projects.
+- Accept the quick assessment result: no breaking API changes were identified; validate with restore and build.

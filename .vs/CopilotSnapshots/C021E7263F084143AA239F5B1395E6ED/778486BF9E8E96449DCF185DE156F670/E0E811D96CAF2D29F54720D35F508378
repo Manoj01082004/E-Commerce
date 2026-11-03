@@ -1,0 +1,5 @@
+﻿# 01-user-services-pkcs: Promote secure Pkcs version in UserServices
+
+Update `Backend/UserServices/UserServices.csproj` with the minimal explicit `System.Security.Cryptography.Pkcs` 9.0.21 package reference. This overrides the vulnerable 9.0.11 transitive resolution without changing unrelated package references or the already-secure 10.0.14 references in other projects. No source API changes are expected based on the package API diff in `apidiff/System.Security.Cryptography.Pkcs.apidiff.md`.
+
+**Done when**: Restore resolves `System.Security.Cryptography.Pkcs` 9.0.21 for `UserServices` without NU1902/NU1903, and the full solution builds successfully.

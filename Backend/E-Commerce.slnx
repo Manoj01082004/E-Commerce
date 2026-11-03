@@ -1,6 +1,5 @@
 <Solution>
-  <Project Path="E-Commerce Web/E-Commerce API.csproj" />
-  <Project Path="E-CommerceBTO/E-CommerceBTO.csproj" Id="3e4fbd2f-fa77-45a8-a7a4-d114b54c97c4" />
-  <Project Path="E-CommerceDTO/E-CommerceDTO.csproj" Id="d92fce10-0cd5-42f8-804c-213c5744ea43" />
-  <Project Path="E-CommerceTest/E-CommerceTest.csproj" Id="8021b564-719f-4335-aee4-477619caab39" />
+  <Project Path="OrderServices/OrderServices.csproj" Id="0b142308-08d9-4b72-a2ac-8fabed717e6d" />
+  <Project Path="ProductServices/ProductServices.csproj" Id="7573faa5-9635-4f4c-ab3c-77d18c768ce7" />
+  <Project Path="UserServices/UserServices.csproj" Id="8df5a11b-37ed-466e-8890-1064af8e35fe" />
 </Solution>

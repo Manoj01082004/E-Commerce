@@ -1,0 +1,14 @@
+﻿using E_CommerceDTO.models;
+
+namespace E_CommerceDTO.Repositories.Interfaces
+{
+    public interface IOrderRepository
+    {
+        Task<IEnumerable<Order>> GetAllOrdersAsync();
+        Task<Order?> GetOrderByIdAsync(int id);
+        Task<IEnumerable<Order>> GetOrdersByUserIdAsync(int userId);
+        Task CreateOrderFromCartAsync(Order order, ICollection<CartItem> cartItems);
+        Task UpdateOrderAsync(Order order);
+        Task DeleteOrderAsync(int id);
+    }
+}

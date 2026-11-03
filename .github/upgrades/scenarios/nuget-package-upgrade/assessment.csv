@@ -1,0 +1,4 @@
+Issue ID,Description,State,Severity,Story Points,Project Path,Location Kind,Path,Line,Column,Incident ID,Help Link,Assembly Name,Assembly Version,Assembly Public Key,Snippet
+Pkg.0001,Project references an upgraded package,Active,Information,0,E-Commerce Web\E-Commerce API.csproj,File,E-Commerce Web\E-Commerce API.csproj,,,System.Security.Cryptography.Pkcs 10.0.14,,,,,"System.Security.Cryptography.Pkcs, 10.0.14"
+Pkg.0001,Project references an upgraded package,Active,Information,0,E-CommerceBTO\E-CommerceBTO.csproj,File,E-CommerceBTO\E-CommerceBTO.csproj,,,System.Security.Cryptography.Pkcs 10.0.14,,,,,"System.Security.Cryptography.Pkcs, 10.0.14"
+Pkg.0001,Project references an upgraded package,Active,Information,0,E-CommerceDTO\E-CommerceDTO.csproj,File,E-CommerceDTO\E-CommerceDTO.csproj,,,System.Security.Cryptography.Pkcs 10.0.14,,,,,"System.Security.Cryptography.Pkcs, 10.0.14"

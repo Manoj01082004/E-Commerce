@@ -1,0 +1,19 @@
+﻿# 01-user-services-pkcs: Promote secure Pkcs version in UserServices
+
+## Objective
+Update `Backend/UserServices/UserServices.csproj` with the minimal explicit `System.Security.Cryptography.Pkcs` 9.0.21 package reference to override the vulnerable 9.0.11 transitive resolution.
+
+## Research findings
+- The affected project is SDK-style `Microsoft.NET.Sdk.Web` targeting `net10.0`.
+- `UserServices.csproj` currently has no direct `System.Security.Cryptography.Pkcs` reference.
+- `Backend/UserServices/obj/project.assets.json` resolves `System.Security.Cryptography.Pkcs` and `System.Security.Cryptography.ProtectedData` at 9.0.11 transitively, and records NU1902 and NU1903 for Pkcs 9.0.11.
+- `get_project_dependencies` confirmed the existing package references are defined directly in `UserServices.csproj`; no central package management definition was reported.
+- Other projects already contain explicit `System.Security.Cryptography.Pkcs` 10.0.14 references and are unrelated to the requested minimal fix; do not modify them.
+- The quick assessment recommends 9.0.21 as unified and reports no API breaking changes for the requested upgrade. The package API diff is at `apidiff/System.Security.Cryptography.Pkcs.apidiff.md`.
+
+## Scope and validation
+1. Add one direct `PackageReference` for `System.Security.Cryptography.Pkcs` version 9.0.21 to the existing package item group.
+2. Restore/build `UserServices` and the full `Backend/E-Commerce.slnx` solution.
+3. Confirm the resolved assets no longer contain Pkcs 9.0.11 and restore/build output has no NU1902 or NU1903 warnings.
+
+**Done when**: Restore resolves `System.Security.Cryptography.Pkcs` 9.0.21 for `UserServices` without NU1902/NU1903, and the full solution builds successfully.

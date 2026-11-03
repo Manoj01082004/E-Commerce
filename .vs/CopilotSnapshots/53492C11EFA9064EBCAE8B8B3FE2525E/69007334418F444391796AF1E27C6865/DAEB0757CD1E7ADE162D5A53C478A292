@@ -1,0 +1,5 @@
+﻿# 01-product-services-vulnerability-review: Review ProductServices package vulnerabilities
+
+Inspect `Backend/ProductServices/ProductServices.csproj`, package references, restore metadata, NuGet configuration, and `appsettings.json`. Upgrade only packages with known vulnerabilities to secure compatible stable versions; keep the change minimal and leave unrelated services and solution-wide dependencies untouched.
+
+**Done when**: ProductServices restore and build succeed, the vulnerability scan reports no remaining advisories, and no unrelated project or configuration changes are made.

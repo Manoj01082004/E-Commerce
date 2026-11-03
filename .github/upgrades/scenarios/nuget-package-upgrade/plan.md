@@ -1,0 +1,14 @@
+# NuGet Package Upgrade Plan
+
+## Overview
+
+**Target**: Inspect and remediate known NuGet package vulnerabilities in OrderServices targeting .NET 10.
+**Scope**: `Backend/OrderServices/OrderServices.csproj` and its resolved restore graph only.
+
+## Tasks
+
+### 01-product-services-vulnerability-review: Review OrderServices package vulnerabilities
+
+Inspect `Backend/OrderServices/OrderServices.csproj`, package references, restore metadata, NuGet configuration, and the resolved dependency graph. Upgrade only packages with known vulnerabilities to secure compatible stable versions; keep the change minimal and leave unrelated services and solution-wide dependencies untouched.
+
+**Done when**: OrderServices restore and build succeed, the vulnerability scan reports no remaining advisories, and no unrelated project or configuration changes are made. If the current graph is already secure, document that no package edit is required.

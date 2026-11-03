@@ -1,0 +1,215 @@
+﻿using AutoMapper;
+using OrderServices.DTO_s.OrderDTO_s;
+using OrderServices.Models;
+using OrderServices.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+
+namespace OrderServices.Controllers
+{
+    [Authorize]
+    [Route("api/orders")]
+    [ApiController]
+    public class OrderController : ControllerBase
+    {
+        private readonly OrderService _service;
+        private readonly IMapper _mapper;
+
+        public OrderController(OrderService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetAllOrders()
+        {
+            try
+            {
+                var orders = await _service.GetAllOrdersAsync();
+
+                var orderDTOs = _mapper.Map<IEnumerable<OrderDTO>>(orders);
+
+                return Ok(orderDTOs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<OrderDTO>> GetOrderById(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest("Invalid order ID.");
+                }
+
+                var order = await _service.GetOrderByIdAsync(id);
+
+                if (order is null)
+                {
+                    return NotFound("Order not found.");
+                }
+
+                var userId = GetCurrentUserId();
+
+                if (order.UserId != userId && !User.IsInRole("Admin"))
+                {
+                    return Forbid();
+                }
+
+                return Ok(_mapper.Map<OrderDTO>(order));
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("my-orders")]
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetMyOrders()
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+
+                var orders = await _service.GetOrdersByUserIdAsync(userId);
+
+                return Ok(_mapper.Map<IEnumerable<OrderDTO>>(orders));
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpPost("create-from-cart")]
+        public async Task<ActionResult<OrderDTO>> CreateOrderFromCart(
+            [FromBody] CheckoutDTO checkoutDTO)
+        {
+            try
+            {
+                if (checkoutDTO is null)
+                {
+                    return BadRequest("Checkout data is required.");
+                }
+
+                var userId = GetCurrentUserId();
+
+                var order = await _service.CreateOrderFromCartAsync(
+                    userId,
+                    checkoutDTO.ShippingAddress);
+
+                if (order is null)
+                {
+                    return BadRequest("Unable to create order.");
+                }
+
+                return CreatedAtAction(
+                    nameof(GetOrderById),
+                    new { id = order.Id },
+                    _mapper.Map<OrderDTO>(order));
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<OrderDTO>> UpdateOrder(
+            int id,
+            [FromBody] OrderUpdateDTO orderUpdateDTO)
+        {
+            try
+            {
+                var order = await _service.GetOrderByIdAsync(id);
+
+                if (order is null)
+                {
+                    return NotFound("Order not found.");
+                }
+
+                _mapper.Map(orderUpdateDTO, order);
+
+                await _service.UpdateOrderAsync(order);
+
+                return Ok(_mapper.Map<OrderDTO>(order));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> DeleteOrder(int id)
+        {
+            try
+            {
+                var deleted = await _service.DeleteOrderAsync(id);
+
+                if (!deleted)
+                {
+                    return NotFound("Order not found.");
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
+
+        private int GetCurrentUserId()
+        {
+            var userIdValue = User.FindFirstValue(
+                ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(userIdValue, out var userId))
+            {
+                throw new UnauthorizedAccessException(
+                    "Invalid user token.");
+            }
+
+            return userId;
+        }
+    }
+}

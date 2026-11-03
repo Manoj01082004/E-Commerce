@@ -1,0 +1,45 @@
+﻿using ProductServices.Models;
+using ProductServices.Repositories;
+using ProductServices.Repositories.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ProductServices.Services
+{
+    public class ProductService
+    {
+        private readonly IProductRepository _repo;
+        public ProductService(IProductRepository repo)
+        {
+            _repo = repo;
+        }
+        public async Task<ICollection<Product>> GetAllProductsAsync()
+        {
+            return await _repo.GetAllProductsAsync();
+
+        }
+        public async Task<Product?> GetProductByIdAsync(int id)
+        {
+            return await _repo.GetProductByIdAsync(id);
+        }
+        public async Task CreateProductAsync(Product product)
+        {
+            await _repo.CreateProductAsync(product);
+        }
+        public async Task UpdateProductAsync(Product product)
+        {
+            await _repo.UpdateProductAsync(product);
+        }
+        public async Task<bool> DeleteProductAsync(int id)
+        {
+            var existingProduct = await _repo.GetProductByIdAsync(id);
+            if (existingProduct == null)
+            {
+                return false; 
+            }
+            await _repo.DeleteProductAsync(id);
+            return true;
+        }
+    }
+}

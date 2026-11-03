@@ -1,0 +1,68 @@
+﻿
+using OrderServices.Data;
+using OrderServices.Models;
+using OrderServices.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace OrderServices.Repository
+{
+    public class CartItemRepository : ICartItemRepository
+    {
+        private readonly OrderDbContext _db;
+        public CartItemRepository(OrderDbContext db)
+        {
+            _db = db;
+        }
+        public async Task<ICollection<CartItem>> GetCartItemsByUserIdAsync(int userId)
+        {
+            return await _db.CartItems
+                .Where(ci => ci.UserId == userId)
+                .ToListAsync();
+        }
+        public async Task<CartItem?> GetCartItemByIdAsync(int id)
+        {
+            return await _db.CartItems
+                .FirstOrDefaultAsync(ci => ci.Id == id);
+        }
+        public async Task<CartItem?> GetCartItemByUserAndProductAsync(int userId,int productId)
+        {
+            return await _db.CartItems
+                .FirstOrDefaultAsync(cartItem =>
+                    cartItem.UserId == userId &&
+                    cartItem.ProductId == productId);
+        }
+        public async Task AddCartItemAsync(CartItem cartItem)
+        {
+            _db.CartItems.Add(cartItem);
+            await _db.SaveChangesAsync();
+        }
+        public async Task UpdateCartItemAsync(CartItem cartItem)
+        {
+            _db.CartItems.Update(cartItem);
+            await _db.SaveChangesAsync();
+        }
+        public async Task DeleteCartItemAsync(int id)
+        {
+            var cartItem=await _db.CartItems.FindAsync(id);
+            if(cartItem != null)
+            {
+                _db.CartItems.Remove(cartItem);
+                await _db.SaveChangesAsync();
+            }
+        }
+        public async Task ClearCartItemAsync(int userId)
+        {
+            var cartItems = await _db.CartItems
+                .Where(ci => ci.UserId == userId)
+                .ToListAsync();
+            if(cartItems.Count > 0)
+            {
+                _db.CartItems.RemoveRange(cartItems);
+                await _db.SaveChangesAsync();
+            }
+        }
+    }
+}

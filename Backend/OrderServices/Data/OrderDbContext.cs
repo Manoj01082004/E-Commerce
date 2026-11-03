@@ -1,0 +1,17 @@
+﻿using OrderServices.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace OrderServices.Data
+{
+    public class OrderDbContext : DbContext
+    {
+        public OrderDbContext(DbContextOptions<OrderDbContext> options)
+            : base(options)
+        {
+        }
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+    }
+}
