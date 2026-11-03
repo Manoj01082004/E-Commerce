@@ -56,7 +56,7 @@ function CheckoutPage() {
             setPlacingOrder(true);
 
             const response = await axiosClient.post(
-                "/order/create-from-cart",
+                "/orders/create-from-cart",
                 {
                     shippingAddress: shippingAddress.trim()
                 }

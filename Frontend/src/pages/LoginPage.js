@@ -36,7 +36,11 @@ function LoginPage() {
                 passwordHash: formData.password
             });
 
-            const user = response.data;
+            const user = response.data.user ?? response.data;
+
+            if (!user || !user.name) {
+                  throw new Error("The login response did not contain user details.");
+          }
 
             login(user);
 

@@ -168,3 +168,4 @@ C:\Users\ManojHK\source\repos\E-Commerce\Backend\OrderServices\bin\Debug\net10.0
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\OrderServices\bin\Debug\net10.0\runtimes\win-arm64\native\msalruntime_arm64.dll
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\OrderServices\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\OrderServices\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\ManojHK\source\repos\E-Commerce\Backend\OrderServices\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

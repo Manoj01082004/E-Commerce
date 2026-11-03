@@ -15,7 +15,7 @@ function OrdersPage() {
 
     async function loadOrders() {
         try {
-            const response = await axiosClient.get("/Order/my-orders");
+            const response = await axiosClient.get("/orders/my-orders");
 
             setOrders(response.data);
         } catch (requestError) {

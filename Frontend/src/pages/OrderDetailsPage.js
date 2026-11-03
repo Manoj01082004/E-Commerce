@@ -14,7 +14,7 @@ function OrderDetailsPage() {
 
     const loadOrderDetails = useCallback(async () => {
         try {
-            const response = await axiosClient.get(`/order/${orderId}`);
+            const response = await axiosClient.get(`/orders/${orderId}`);
 
             setOrder(response.data);
         } catch (requestError) {

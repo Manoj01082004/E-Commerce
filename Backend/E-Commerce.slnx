@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Gateway/Gateway.csproj" Id="10848671-06ee-4edf-847a-519a705c3ddc" />
   <Project Path="OrderServices/OrderServices.csproj" Id="0b142308-08d9-4b72-a2ac-8fabed717e6d" />
   <Project Path="ProductServices/ProductServices.csproj" Id="7573faa5-9635-4f4c-ab3c-77d18c768ce7" />
   <Project Path="UserServices/UserServices.csproj" Id="8df5a11b-37ed-466e-8890-1064af8e35fe" />

@@ -1,5 +1,6 @@
 ﻿
 using OrderServices.Clients;
+using OrderServices.DTO_s.CartItemDTO_s;
 using OrderServices.Models;
 using OrderServices.Repository.Interfaces;
 
@@ -18,10 +19,35 @@ namespace OrderServices.Services
             _productServiceClient = productServiceClient;
         }
 
-        public async Task<ICollection<CartItem>> GetCartItemsByUserIdAsync(
-            int userId)
+        public async Task<ICollection<CartItemDTO>> GetCartItemsByUserIdAsync(
+    int userId)
         {
-            return await _repo.GetCartItemsByUserIdAsync(userId);
+            var cartItems = await _repo.GetCartItemsByUserIdAsync(userId);
+            var result = new List<CartItemDTO>();
+
+            foreach (var cartItem in cartItems)
+            {
+                var product = await _productServiceClient
+                    .GetProductByIdAsync(cartItem.ProductId);
+
+                if (product is null)
+                {
+                    continue;
+                }
+
+                result.Add(new CartItemDTO
+                {
+                    Id = cartItem.Id,
+                    ProductId = cartItem.ProductId,
+                    Quantity = cartItem.Quantity,
+                    ProductName = product.Name,
+                    ProductImageUrl = product.ImageUrl,
+                    ProductPrice = product.Price,
+                    AvailableQuantity = product.AvailableQuantity
+                });
+            }
+
+            return result;
         }
 
         public async Task<CartItem?> GetCartItemByIdAsync(int id)

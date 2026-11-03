@@ -3,8 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\clients\\productserviceproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\clients\\productserviceproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\clients\\productserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\clients\\productserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\controllers\\cartitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\controllers\\cartitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\dto\u0027s\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\dto\u0027s\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\gateway\\gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|solutionrelative:gateway\\gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|solutionrelative:gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\gateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|solutionrelative:gateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\gateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|solutionrelative:gateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -13,6 +61,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{10848671-06EE-4EDF-847A-519A705C3DDC}|Gateway\\Gateway.csproj|solutionrelative:gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7573FAA5-9635-4F4C-AB3C-77D18C768CE7}|ProductServices\\ProductServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\productservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -29,14 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7573FAA5-9635-4F4C-AB3C-77D18C768CE7}|ProductServices\\ProductServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\productservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7573FAA5-9635-4F4C-AB3C-77D18C768CE7}|ProductServices\\ProductServices.csproj|solutionrelative:productservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\repository\\interfaces\\icartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,16 +115,8 @@
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\dto\u0027s\\cartitemdto\u0027s\\cartitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\clients\\productserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\clients\\productserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\models\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -107,16 +143,8 @@
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\data\\orderdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\data\\orderdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\controller\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\controller\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -135,23 +163,11 @@
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\repository\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\clients\\productserviceproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\clients\\productserviceproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\dto\u0027s\\orderdto\u0027s\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\dto\u0027s\\orderdto\u0027s\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D92FCE10-0CD5-42F8-804C-213C5744EA43}|E-CommerceDTO\\E-CommerceDTO.csproj|solutionrelative:e-commercedto\\context\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7573FAA5-9635-4F4C-AB3C-77D18C768CE7}|ProductServices\\ProductServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\productservices\\data\\productdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -262,14 +278,6 @@
       "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\dto\u0027s\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\dto\u0027s\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\e-commerce web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EC5F86-A0DD-2A2A-CF63-4476321EBDE8}|E-Commerce Web\\E-Commerce API.csproj|solutionrelative:e-commerce web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -312,10 +320,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\userservices.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|solutionrelative:userservices\\userservices.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DF5A11B-37ED-466E-8890-1064AF8E35FE}|UserServices\\UserServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\userservices\\migrations\\20261102091739_addrefreshtokentodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -376,6 +380,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|c:\\users\\manojhk\\source\\repos\\e-commerce\\backend\\orderservices\\migrations\\20261103070829_initializeorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B142308-08D9-4B72-A2AC-8FABED717E6D}|OrderServices\\OrderServices.csproj|solutionrelative:orderservices\\migrations\\20261103070829_initializeorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\PaymentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:E-Commerce Web\\Controller\\PaymentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:E-CommerceDTO\\Context\\ECommerceDBContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:E-Commerce Web\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -389,45 +405,207 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "20261103160905_AddURLSandPriceToCart.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs",
+              "RelativeDocumentMoniker": "OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs",
+              "RelativeToolTip": "OrderServices\\Migrations\\20261103160905_AddURLSandPriceToCart.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T16:09:05.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CartItemService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Services\\CartItemService.cs",
               "RelativeDocumentMoniker": "OrderServices\\Services\\CartItemService.cs",
               "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Services\\CartItemService.cs",
               "RelativeToolTip": "OrderServices\\Services\\CartItemService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAswAUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:35:48.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\appsettings.json",
-              "RelativeDocumentMoniker": "OrderServices\\appsettings.json",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\appsettings.json",
-              "RelativeToolTip": "OrderServices\\appsettings.json",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-03T05:27:05.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\appsettings.json",
-              "RelativeDocumentMoniker": "UserServices\\appsettings.json",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\appsettings.json",
-              "RelativeToolTip": "UserServices\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-02T06:59:13.327Z",
+              "WhenOpened": "2026-11-03T06:35:48.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CartItemController.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\CartItemController.cs",
+              "RelativeDocumentMoniker": "OrderServices\\Controllers\\CartItemController.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\CartItemController.cs",
+              "RelativeToolTip": "OrderServices\\Controllers\\CartItemController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwBkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T06:53:36.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductServiceClient.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceClient.cs",
+              "RelativeDocumentMoniker": "OrderServices\\Clients\\ProductServiceClient.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceClient.cs",
+              "RelativeToolTip": "OrderServices\\Clients\\ProductServiceClient.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T06:23:26.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "OrderServices\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\CartItem.cs",
+              "RelativeToolTip": "OrderServices\\Models\\CartItem.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T05:38:36.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductServiceProductDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceProductDTO.cs",
+              "RelativeDocumentMoniker": "OrderServices\\Clients\\ProductServiceProductDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceProductDTO.cs",
+              "RelativeToolTip": "OrderServices\\Clients\\ProductServiceProductDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T06:22:32.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "RelativeToolTip": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T06:09:26.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
+              "RelativeDocumentMoniker": "UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
+              "RelativeToolTip": "UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T09:40:31.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\appsettings.json",
+              "RelativeDocumentMoniker": "Gateway\\appsettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\appsettings.json",
+              "RelativeToolTip": "Gateway\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T10:23:06.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "OrderServices\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Properties\\launchSettings.json",
+              "RelativeToolTip": "OrderServices\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T07:10:36.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\appsettings.json",
+              "RelativeDocumentMoniker": "UserServices\\appsettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\appsettings.json",
+              "RelativeToolTip": "UserServices\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-02T06:59:13.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\ocelot.json",
+              "RelativeDocumentMoniker": "Gateway\\ocelot.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\ocelot.json",
+              "RelativeToolTip": "Gateway\\ocelot.json",
+              "ViewState": "AgIAABoBAAAAAAAAAAAAAC8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T10:26:36.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\Program.cs",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Program.cs",
+              "RelativeToolTip": "Gateway\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T11:16:30.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Gateway.csproj",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Gateway.csproj",
+              "RelativeDocumentMoniker": "Gateway\\Gateway.csproj",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Gateway.csproj",
+              "RelativeToolTip": "Gateway\\Gateway.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-03T11:32:15.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\appsettings.json",
+              "RelativeDocumentMoniker": "OrderServices\\appsettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\appsettings.json",
+              "RelativeToolTip": "OrderServices\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T05:27:05.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Gateway\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\Gateway\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Gateway\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-03T11:27:46.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\appsettings.json",
               "RelativeDocumentMoniker": "ProductServices\\appsettings.json",
@@ -435,25 +613,11 @@
               "RelativeToolTip": "ProductServices\\appsettings.json",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-02T10:30:52.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T10:30:52.339Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CartItemController.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\CartItemController.cs",
-              "RelativeDocumentMoniker": "OrderServices\\Controllers\\CartItemController.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\CartItemController.cs",
-              "RelativeToolTip": "OrderServices\\Controllers\\CartItemController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:53:36.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 92,
               "Title": "E-Commerce.slnLaunch.user",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce.slnLaunch.user",
               "RelativeDocumentMoniker": "E-Commerce.slnLaunch.user",
@@ -465,7 +629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ProductServices\\Properties\\launchSettings.json",
@@ -473,12 +637,11 @@
               "RelativeToolTip": "ProductServices\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-03T05:29:44.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T05:29:44.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Program.cs",
               "RelativeDocumentMoniker": "OrderServices\\Program.cs",
@@ -486,12 +649,11 @@
               "RelativeToolTip": "OrderServices\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:20:49.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T06:20:49.62Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Program.cs",
               "RelativeDocumentMoniker": "ProductServices\\Program.cs",
@@ -499,12 +661,11 @@
               "RelativeToolTip": "ProductServices\\Program.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAArwHMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T10:57:36.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T10:57:36.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 95,
               "Title": "20261103070829_InitializeOrderService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Migrations\\20261103070829_InitializeOrderService.cs",
               "RelativeDocumentMoniker": "OrderServices\\Migrations\\20261103070829_InitializeOrderService.cs",
@@ -516,7 +677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 94,
               "Title": "ProductServices.csproj",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\ProductServices.csproj",
               "RelativeDocumentMoniker": "ProductServices\\ProductServices.csproj",
@@ -524,25 +685,11 @@
               "RelativeToolTip": "ProductServices\\ProductServices.csproj",
               "ViewState": "AgIAABEAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-03T07:13:25.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T07:13:25.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "OrderServices\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Properties\\launchSettings.json",
-              "RelativeToolTip": "OrderServices\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-03T07:10:36.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 93,
               "Title": "E-Commerce.slnLaunch.user",
               "DocumentMoniker": "C:\\Users\\ManojHK\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1784384846\\E-Commerce.slnLaunch.user",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1784384846\\E-Commerce.slnLaunch.user",
@@ -554,7 +701,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "ICartItemRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\Interfaces\\ICartItemRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\Interfaces\\ICartItemRepository.cs",
@@ -566,7 +713,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "PaymentDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentDTO.cs",
@@ -578,7 +725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "PaymentCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentCreateDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentCreateDTO.cs",
@@ -590,7 +737,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "PaymentCompleteDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentCompleteDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\PaymentDTO\u0027s\\PaymentCompleteDTO.cs",
@@ -602,7 +749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "OrderUpdateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderUpdateDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderUpdateDTO.cs",
@@ -614,7 +761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "OrderDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderDTO.cs",
@@ -626,7 +773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "CheckoutDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\CheckoutDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\CheckoutDTO.cs",
@@ -638,7 +785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "CartItemUpdateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemUpdateDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemUpdateDTO.cs",
@@ -650,19 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CartItemDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
-              "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
-              "RelativeToolTip": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:09:26.255Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "CartItemCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemCreateDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\CartItemDTO\u0027s\\CartItemCreateDTO.cs",
@@ -674,19 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductServiceClient.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceClient.cs",
-              "RelativeDocumentMoniker": "OrderServices\\Clients\\ProductServiceClient.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceClient.cs",
-              "RelativeToolTip": "OrderServices\\Clients\\ProductServiceClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:23:26.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "PaymentStatus.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\PaymentStatus.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\PaymentStatus.cs",
@@ -698,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "PaymentMethods.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\PaymentMethods.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\PaymentMethods.cs",
@@ -710,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\Payment.cs",
@@ -722,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\OrderStatus.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\OrderStatus.cs",
@@ -734,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\OrderItem.cs",
@@ -746,7 +869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\Order.cs",
               "RelativeDocumentMoniker": "OrderServices\\Models\\Order.cs",
@@ -758,7 +881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 87,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\Interfaces\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\Interfaces\\IOrderRepository.cs",
@@ -770,7 +893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 88,
               "Title": "IPaymentRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\Interfaces\\IPaymentRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\Interfaces\\IPaymentRepository.cs",
@@ -782,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 89,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\OrderRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\OrderRepository.cs",
@@ -794,7 +917,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 90,
               "Title": "PaymentRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\PaymentRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\PaymentRepository.cs",
@@ -806,7 +929,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 91,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "OrderServices\\Controllers\\PaymentController.cs",
@@ -818,7 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "OrderDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Data\\OrderDbContext.cs",
               "RelativeDocumentMoniker": "OrderServices\\Data\\OrderDbContext.cs",
@@ -830,7 +953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 96,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Controller\\PaymentController.cs",
               "RelativeDocumentMoniker": "E-Commerce Web\\Controller\\PaymentController.cs",
@@ -842,7 +965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "progress-details.md",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-product-services-vulnerability-review\\progress-details.md",
               "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-product-services-vulnerability-review\\progress-details.md",
@@ -854,19 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "OrderServices\\Models\\CartItem.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Models\\CartItem.cs",
-              "RelativeToolTip": "OrderServices\\Models\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T05:38:36.789Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 86,
               "Title": "task.md",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-product-services-vulnerability-review\\task.md",
               "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-product-services-vulnerability-review\\task.md",
@@ -878,7 +989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "OrderServices\\Controllers\\OrderController.cs",
@@ -890,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "OrderServices\\Services\\OrderService.cs",
@@ -902,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "PaymentService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Services\\PaymentService.cs",
               "RelativeDocumentMoniker": "OrderServices\\Services\\PaymentService.cs",
@@ -914,7 +1025,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "CartItemRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Repository\\CartItemRepository.cs",
               "RelativeDocumentMoniker": "OrderServices\\Repository\\CartItemRepository.cs",
@@ -926,19 +1037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ProductServiceProductDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceProductDTO.cs",
-              "RelativeDocumentMoniker": "OrderServices\\Clients\\ProductServiceProductDTO.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\Clients\\ProductServiceProductDTO.cs",
-              "RelativeToolTip": "OrderServices\\Clients\\ProductServiceProductDTO.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBMAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T06:22:32.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "OrderItemDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderItemDTO.cs",
               "RelativeDocumentMoniker": "OrderServices\\DTO\u0027s\\OrderDTO\u0027s\\OrderItemDTO.cs",
@@ -950,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "OrderServices.csproj",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\OrderServices\\OrderServices.csproj",
               "RelativeDocumentMoniker": "OrderServices\\OrderServices.csproj",
@@ -958,24 +1057,11 @@
               "RelativeToolTip": "OrderServices\\OrderServices.csproj",
               "ViewState": "AgIAABAAAAAAAAAAAMBdwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-03T05:59:45.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T05:59:45.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "UserServices\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Properties\\launchSettings.json",
-              "RelativeToolTip": "UserServices\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwA8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-02T09:22:09.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "tasks.md",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks.md",
               "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks.md",
@@ -987,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 97,
               "Title": "ECommerceDBContext.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-CommerceDTO\\Context\\ECommerceDBContext.cs",
               "RelativeDocumentMoniker": "E-CommerceDTO\\Context\\ECommerceDBContext.cs",
@@ -999,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "ProductCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductCreateDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductCreateDTO.cs",
@@ -1011,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "ProductDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Data\\ProductDbContext.cs",
               "RelativeDocumentMoniker": "ProductServices\\Data\\ProductDbContext.cs",
@@ -1023,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "ProductDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductDTO.cs",
@@ -1035,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "ProductUpdateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductUpdateDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\ProductDTO\u0027s\\ProductUpdateDTO.cs",
@@ -1047,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "20261103040553_CreateProductDB.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Migrations\\20261103040553_CreateProductDB.cs",
               "RelativeDocumentMoniker": "ProductServices\\Migrations\\20261103040553_CreateProductDB.cs",
@@ -1059,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "InventoryUpdateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryUpdateDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryUpdateDTO.cs",
@@ -1071,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "RestockInventoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\RestockInventoryDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\RestockInventoryDTO.cs",
@@ -1083,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 48,
               "Title": "InventoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryDTO.cs",
@@ -1095,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 49,
               "Title": "InventoryCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryCreateDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\InventoryDTO\u0027s\\InventoryCreateDTO.cs",
@@ -1107,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 50,
               "Title": "CategoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\CategoryDTO\u0027s\\CategoryDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\CategoryDTO\u0027s\\CategoryDTO.cs",
@@ -1119,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 51,
               "Title": "CategoryCreateAndUpdateDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\DTO\u0027s\\CategoryDTO\u0027s\\CategoryCreateAndUpdateDTO.cs",
               "RelativeDocumentMoniker": "ProductServices\\DTO\u0027s\\CategoryDTO\u0027s\\CategoryCreateAndUpdateDTO.cs",
@@ -1131,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 52,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Migrations\\Models\\Product.cs",
               "RelativeDocumentMoniker": "ProductServices\\Migrations\\Models\\Product.cs",
@@ -1143,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 53,
               "Title": "Inventory.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Migrations\\Models\\Inventory.cs",
               "RelativeDocumentMoniker": "ProductServices\\Migrations\\Models\\Inventory.cs",
@@ -1155,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 54,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Migrations\\Models\\Category.cs",
               "RelativeDocumentMoniker": "ProductServices\\Migrations\\Models\\Category.cs",
@@ -1167,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 55,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\Interfaces\\IProductRepository.cs",
@@ -1179,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 56,
               "Title": "IInventoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\Interfaces\\IInventoryRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\Interfaces\\IInventoryRepository.cs",
@@ -1191,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 57,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\Interfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\Interfaces\\ICategoryRepository.cs",
@@ -1203,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 58,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\ProductRepository.cs",
@@ -1215,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 59,
               "Title": "InventoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\InventoryRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\InventoryRepository.cs",
@@ -1227,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 60,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "ProductServices\\Repositories\\CategoryRepository.cs",
@@ -1239,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 61,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "ProductServices\\Services\\ProductService.cs",
@@ -1251,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 62,
               "Title": "InventoryService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Services\\InventoryService.cs",
               "RelativeDocumentMoniker": "ProductServices\\Services\\InventoryService.cs",
@@ -1263,7 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 63,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "ProductServices\\Services\\CategoryService.cs",
@@ -1275,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 64,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "ProductServices\\Controllers\\CategoryController.cs",
@@ -1287,7 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 65,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\ProductServices\\Controllers\\InventoryController.cs",
               "RelativeDocumentMoniker": "ProductServices\\Controllers\\InventoryController.cs",
@@ -1299,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "progress-details.md",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-user-services-pkcs\\progress-details.md",
               "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\nuget-package-upgrade\\tasks\\01-user-services-pkcs\\progress-details.md",
@@ -1311,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 66,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "UserServices\\Controllers\\UserController.cs",
@@ -1323,7 +1409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 67,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "UserServices\\Services\\UserService.cs",
@@ -1335,7 +1421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 68,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Program.cs",
               "RelativeDocumentMoniker": "UserServices\\Program.cs",
@@ -1347,19 +1433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "LoginResponseDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
-              "RelativeDocumentMoniker": "UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
-              "RelativeToolTip": "UserServices\\DTO\u0027s\\LoginResponseDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T09:40:31.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "RefreshTokenService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Services\\RefreshTokenService.cs",
               "RelativeDocumentMoniker": "UserServices\\Services\\RefreshTokenService.cs",
@@ -1371,7 +1445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "JWTTokenService.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Services\\JWTTokenService.cs",
               "RelativeDocumentMoniker": "UserServices\\Services\\JWTTokenService.cs",
@@ -1383,7 +1457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "20261102091739_AddRefreshTokenTodb.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Migrations\\20261102091739_AddRefreshTokenTodb.cs",
               "RelativeDocumentMoniker": "UserServices\\Migrations\\20261102091739_AddRefreshTokenTodb.cs",
@@ -1395,7 +1469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 98,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\E-Commerce Web\\Program.cs",
               "RelativeDocumentMoniker": "E-Commerce Web\\Program.cs",
@@ -1407,20 +1481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
-              "Title": "UserServices.csproj",
-              "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\UserServices.csproj",
-              "RelativeDocumentMoniker": "UserServices\\UserServices.csproj",
-              "ToolTip": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\UserServices.csproj",
-              "RelativeToolTip": "UserServices\\UserServices.csproj",
-              "ViewState": "AgIAAAkAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-02T09:14:36.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "UserServices\\Repository\\UserRepository.cs",
@@ -1432,7 +1493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "UserRegisterDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\UserRegisterDTO.cs",
               "RelativeDocumentMoniker": "UserServices\\DTO\u0027s\\UserRegisterDTO.cs",
@@ -1444,7 +1505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "UserLoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\UserLoginDTO.cs",
               "RelativeDocumentMoniker": "UserServices\\DTO\u0027s\\UserLoginDTO.cs",
@@ -1456,7 +1517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\DTO\u0027s\\UserDTO.cs",
               "RelativeDocumentMoniker": "UserServices\\DTO\u0027s\\UserDTO.cs",
@@ -1468,7 +1529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Repository\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "UserServices\\Repository\\Interfaces\\IUserRepository.cs",
@@ -1480,7 +1541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 77,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Models\\RefreshToken.cs",
               "RelativeDocumentMoniker": "UserServices\\Models\\RefreshToken.cs",
@@ -1492,7 +1553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 78,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Models\\User.cs",
               "RelativeDocumentMoniker": "UserServices\\Models\\User.cs",
@@ -1504,7 +1565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "UserDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Data\\UserDbContext.cs",
               "RelativeDocumentMoniker": "UserServices\\Data\\UserDbContext.cs",
@@ -1516,7 +1577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "20261102070737_AddUsertoDb.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Migrations\\20261102070737_AddUsertoDb.cs",
               "RelativeDocumentMoniker": "UserServices\\Migrations\\20261102070737_AddUsertoDb.cs",
@@ -1528,7 +1589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 79,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\ManojHK\\source\\repos\\E-Commerce\\Backend\\UserServices\\Models\\Roles.cs",
               "RelativeDocumentMoniker": "UserServices\\Models\\Roles.cs",
