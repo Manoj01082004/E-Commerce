@@ -2,28 +2,25 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBoxOpen } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./OrdersPage.css";
 
 function OrdersPage() {
+    const { orders: orderService } = useApi();
+
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        loadOrders();
-    }, []);
-
     async function loadOrders() {
         try {
-            const response = await axiosClient.get("/orders/my-orders");
+            const orderData = await orderService.getMyOrders();
 
-            setOrders(response.data);
-        } catch (requestError) {
-            const status = requestError.response?.status;
-
-            if (status !== 404) {
+            setOrders(orderData);
+        } catch (error) {
+            if (error.status !== 404) {
                 toast.error(
-                    requestError.response?.data ||
+                    error.message ||
                     "Unable to load your orders."
                 );
             }
@@ -34,11 +31,8 @@ function OrdersPage() {
         }
     }
 
-    function getStatusClass(status) {
-        return status
-            ? `order-status ${status.toLowerCase()}`
-            : "order-status";
-    }
+    loadOrders();
+}, [orderService]);
 
     function formatDate(dateValue) {
         if (!dateValue) {
@@ -50,6 +44,12 @@ function OrdersPage() {
             month: "short",
             year: "numeric"
         });
+    }
+
+    function getStatusClass(status) {
+        return status
+            ? `order-status ${status.toLowerCase()}`
+            : "order-status";
     }
 
     if (loading) {
@@ -67,9 +67,7 @@ function OrdersPage() {
 
                 <h1>No Orders Yet</h1>
 
-                <p>
-                    Your placed orders will appear here.
-                </p>
+                <p>Your placed orders will appear here.</p>
 
                 <Link to="/products" className="orders-shop-button">
                     Start Shopping
@@ -81,7 +79,9 @@ function OrdersPage() {
     return (
         <section className="orders-page">
             <div className="orders-header">
-                <p className="orders-eyebrow">PURCHASE HISTORY</p>
+                <p className="orders-eyebrow">
+                    PURCHASE HISTORY
+                </p>
 
                 <h1>My Orders</h1>
 

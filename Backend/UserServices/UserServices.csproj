@@ -5,6 +5,13 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+		<Compile Remove="Dockerfile" />
+
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.2.0" />

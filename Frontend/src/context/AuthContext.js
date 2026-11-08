@@ -1,4 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useState
+} from "react";
 
 const AuthContext = createContext();
 
@@ -10,7 +15,10 @@ export function AuthProvider({ children }) {
     });
 
     function login(loggedInUser) {
-        localStorage.setItem("user", JSON.stringify(loggedInUser));
+        localStorage.setItem(
+            "user",
+            JSON.stringify(loggedInUser)
+        );
 
         setUser(loggedInUser);
     }
@@ -21,13 +29,35 @@ export function AuthProvider({ children }) {
         setUser(null);
     }
 
+    useEffect(() => {
+        function handleSessionExpired() {
+            localStorage.removeItem("user");
+
+            setUser(null);
+
+            window.location.assign("/login");
+        }
+
+        window.addEventListener(
+            "auth:session-expired",
+            handleSessionExpired
+        );
+
+        return () => {
+            window.removeEventListener(
+                "auth:session-expired",
+                handleSessionExpired
+            );
+        };
+    }, []);
+
     return (
         <AuthContext.Provider
             value={{
                 user,
                 login,
                 logout,
-                isLoggedIn: user !== null
+                isLoggedIn: Boolean(user)
             }}
         >
             {children}
@@ -36,5 +66,13 @@ export function AuthProvider({ children }) {
 }
 
 export function useAuth() {
-    return useContext(AuthContext);
+    const auth = useContext(AuthContext);
+
+    if (!auth) {
+        throw new Error(
+            "useAuth must be used inside AuthProvider."
+        );
+    }
+
+    return auth;
 }

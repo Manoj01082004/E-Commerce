@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./HomePage.css";
 
 const fallbackImage =
     "https://placehold.co/600x500/222c3d/ddb3a3?text=Category";
 
 function HomePage() {
+    const {
+        products: productService,
+        categories: categoryService
+    } = useApi();
+
     const [allCategories, setAllCategories] = useState([]);
     const [parentCategories, setParentCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    useEffect(() => {
-        loadHomeData();
-    }, []);
-
-    useEffect(() => {
-        console.log(products);
-    }, [products])
-
+   useEffect(() => {
     async function loadHomeData() {
         try {
-            const categoriesResponse = await axiosClient.get("/categories");
+            setLoading(true);
+            setError("");
 
-            const categories = categoriesResponse.data;
+            const [categoryData, productData] = await Promise.all([
+                categoryService.getAll(),
+                productService.getAll()
+            ]);
 
-            const parents = categories
+            const parents = categoryData
                 .filter((category) => {
                     return (
                         category.isActive &&
@@ -41,32 +43,21 @@ function HomePage() {
                     );
                 });
 
-            setAllCategories(categories);
+            setAllCategories(categoryData);
             setParentCategories(parents);
-
-            try {
-                const productsResponse = await axiosClient.get("/products");
-
-                setProducts(productsResponse.data);
-            } catch (productError) {
-                console.error("Unable to load products:", productError);
-
-                setError(
-                    "Categories loaded, but product images could not be loaded."
-                );
-            }
-        } catch (categoryError) {
-            console.error("Unable to load categories:", categoryError);
-
+            setProducts(productData);
+        } catch (error) {
             setError(
-                categoryError.response?.data ||
-                categoryError.message ||
+                error.message ||
                 "Unable to load categories."
             );
         } finally {
             setLoading(false);
         }
     }
+
+    loadHomeData();
+}, [categoryService, productService]);
 
     function getCategoryImage(parentCategoryId) {
         const subCategoryIds = allCategories
@@ -93,7 +84,7 @@ function HomePage() {
         );
     }
 
-    if (parentCategories.length === 0 && error) {
+    if (error) {
         return (
             <p className="category-home-error">
                 {error}
@@ -117,15 +108,9 @@ function HomePage() {
                 </Link>
             </div>
 
-            {error && (
-                <p className="category-home-warning">
-                    {error}
-                </p>
-            )}
-
             {parentCategories.length === 0 ? (
                 <p className="category-home-message">
-                    No parent categories are available.
+                    No categories are available.
                 </p>
             ) : (
                 <div className="category-home-grid">

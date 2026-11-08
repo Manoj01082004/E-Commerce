@@ -8,7 +8,6 @@ using OrderServices.Repository.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using OrderServices.Data;
 using OrderServices.Services;
 using Scalar.AspNetCore;
 using System.Text;
@@ -140,6 +139,12 @@ if (app.Environment.IsDevelopment())
     {
         options.WithTitle("ECommerce Order Service");
     });
+}
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<OrderDbContext>();
+
+    dbContext.Database.Migrate();
 }
 
 app.UseHttpsRedirection();

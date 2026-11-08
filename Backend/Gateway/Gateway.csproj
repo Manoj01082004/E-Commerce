@@ -11,10 +11,16 @@
     <PackageReference Include="Ocelot" Version="25.0.2" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.18.7" />
   </ItemGroup>
-  <ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Dockerfile" />
+
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
+
 		<None Update="ocelot.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-  </ItemGroup>
+	</ItemGroup>
 
 </Project>

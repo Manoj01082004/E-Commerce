@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./AuthPage.css";
 
 function RegisterPage() {
     const navigate = useNavigate();
+    const { auth: authService } = useApi();
 
     const [formData, setFormData] = useState({
         name: "",
@@ -41,7 +42,7 @@ function RegisterPage() {
         try {
             setLoading(true);
 
-            await axiosClient.post("/users/register", {
+            await authService.register({
                 name: formData.name.trim(),
                 email: formData.email.trim(),
                 passwordHash: formData.password
@@ -52,11 +53,8 @@ function RegisterPage() {
             setTimeout(() => {
                 navigate("/");
             }, 1000);
-        } catch (requestError) {
-            toast.error(
-                requestError.response?.data ||
-                "Unable to create your account."
-            );
+        } catch (error) {
+            toast.error(error.message || "Unable to create your account.");
         } finally {
             setLoading(false);
         }

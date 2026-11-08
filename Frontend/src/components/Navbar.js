@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
 import {
     FaBoxOpen,
     FaCartShopping,
@@ -10,25 +9,25 @@ import {
     FaUserPlus
 } from "react-icons/fa6";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { useApi } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
     const navigate = useNavigate();
+    const { auth: authService } = useApi();
     const { user, isLoggedIn, logout } = useAuth();
 
     async function handleLogout() {
-       try {
-         await axiosClient.post("/users/logout");
-
-        logout();
-
-        toast.success("Logged out successfully.");
-
-        navigate("/");
-       } catch (requestError) {
-        toast.error("Unable to log out. Please try again.");
-       }
-}
+        try {
+            await authService.logout();
+        } catch (error) {
+            console.error("Logout API error:", error);
+        } finally {
+            logout();
+            toast.success("Logged out successfully.");
+            navigate("/");
+        }
+    }
 
     return (
         <header className="navbar">

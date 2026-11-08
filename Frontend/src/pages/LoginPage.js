@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
 import "./AuthPage.css";
 
 function LoginPage() {
     const navigate = useNavigate();
+    const { auth: authService } = useApi();
     const { login } = useAuth();
 
     const [formData, setFormData] = useState({
@@ -31,27 +32,22 @@ function LoginPage() {
         try {
             setLoading(true);
 
-            const response = await axiosClient.post("/users/login", {
-                email: formData.email.trim(),
-                passwordHash: formData.password
-            });
+            const user = await authService.login(
+                formData.email.trim(),
+                formData.password
+            );
 
-            const user = response.data.user ?? response.data;
-
-            if (!user || !user.name) {
-                  throw new Error("The login response did not contain user details.");
-          }
+            if (!user?.name) {
+                throw new Error("Login response did not contain user details.");
+            }
 
             login(user);
 
             toast.success(`Welcome back, ${user.name}!`);
 
             navigate("/");
-        } catch (requestError) {
-            toast.error(
-                requestError.response?.data ||
-                "Invalid email or password."
-            );
+        } catch (error) {
+            toast.error(error.message || "Invalid email or password.");
         } finally {
             setLoading(false);
         }

@@ -6,7 +6,7 @@ import {
     FaTrashCan
 } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./CartPage.css";
 
 const fallbackImage =
@@ -14,6 +14,7 @@ const fallbackImage =
 
 function CartPage() {
     const navigate = useNavigate();
+    const { cart: cartService } = useApi();
 
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,23 +22,23 @@ function CartPage() {
     const [stockErrors, setStockErrors] = useState({});
 
     useEffect(() => {
-        loadCartItems();
-    }, []);
-
     async function loadCartItems() {
         try {
-            const response = await axiosClient.get("/cartitems");
+            const items = await cartService.getMyCart();
 
-            setCartItems(response.data);
-        } catch (requestError) {
+            setCartItems(items);
+        } catch (error) {
             toast.error(
-                requestError.response?.data ||
+                error.message ||
                 "Unable to load your cart."
             );
         } finally {
             setLoading(false);
         }
     }
+
+    loadCartItems();
+}, [cartService]);
 
     async function updateQuantity(cartItem, newQuantity) {
         if (newQuantity < 1) {
@@ -61,21 +62,20 @@ function CartPage() {
         try {
             setUpdatingItemId(cartItem.id);
 
-            await axiosClient.put(`/cartitems/${cartItem.id}`, {
-                quantity: newQuantity
-            });
+            await cartService.updateQuantity(
+                cartItem.id,
+                newQuantity
+            );
 
             setCartItems((currentItems) =>
-                currentItems.map((item) => {
-                    if (item.id === cartItem.id) {
-                        return {
+                currentItems.map((item) =>
+                    item.id === cartItem.id
+                        ? {
                             ...item,
                             quantity: newQuantity
-                        };
-                    }
-
-                    return item;
-                })
+                        }
+                        : item
+                )
             );
 
             setStockErrors((currentErrors) => {
@@ -85,9 +85,9 @@ function CartPage() {
 
                 return updatedErrors;
             });
-        } catch (requestError) {
+        } catch (error) {
             toast.error(
-                requestError.response?.data ||
+                error.message ||
                 "Unable to update cart quantity."
             );
         } finally {
@@ -99,16 +99,18 @@ function CartPage() {
         try {
             setUpdatingItemId(cartItemId);
 
-            await axiosClient.delete(`/cartitems/${cartItemId}`);
+            await cartService.removeItem(cartItemId);
 
             setCartItems((currentItems) =>
-                currentItems.filter((item) => item.id !== cartItemId)
+                currentItems.filter(
+                    (item) => item.id !== cartItemId
+                )
             );
 
             toast.success("Item removed from cart.");
-        } catch (requestError) {
+        } catch (error) {
             toast.error(
-                requestError.response?.data ||
+                error.message ||
                 "Unable to remove item from cart."
             );
         } finally {
@@ -133,9 +135,14 @@ function CartPage() {
             <section className="empty-cart">
                 <h1>Your Cart is Empty</h1>
 
-                <p>Add products to your cart to continue shopping.</p>
+                <p>
+                    Add products to your cart to continue shopping.
+                </p>
 
-                <Link to="/products" className="continue-shopping-button">
+                <Link
+                    to="/products"
+                    className="continue-shopping-button"
+                >
                     Continue Shopping
                 </Link>
             </section>
@@ -146,12 +153,17 @@ function CartPage() {
         <section className="cart-page">
             <div className="cart-header">
                 <div>
-                    <p className="cart-eyebrow">YOUR SHOPPING BAG</p>
+                    <p className="cart-eyebrow">
+                        YOUR SHOPPING BAG
+                    </p>
 
                     <h1>My Cart</h1>
                 </div>
 
-                <Link to="/products" className="continue-shopping-link">
+                <Link
+                    to="/products"
+                    className="continue-shopping-link"
+                >
                     ← Continue Shopping
                 </Link>
             </div>
@@ -159,7 +171,10 @@ function CartPage() {
             <div className="cart-layout">
                 <div className="cart-items">
                     {cartItems.map((cartItem) => (
-                        <article className="cart-item" key={cartItem.id}>
+                        <article
+                            className="cart-item"
+                            key={cartItem.id}
+                        >
                             <img
                                 src={
                                     cartItem.productImageUrl ||
@@ -168,7 +183,8 @@ function CartPage() {
                                 alt={cartItem.productName}
                                 className="cart-item-image"
                                 onError={(event) => {
-                                    event.currentTarget.src = fallbackImage;
+                                    event.currentTarget.src =
+                                        fallbackImage;
                                 }}
                             />
 
@@ -176,7 +192,8 @@ function CartPage() {
                                 <h2>{cartItem.productName}</h2>
 
                                 <p className="cart-item-price">
-                                    ${Number(
+                                    $
+                                    {Number(
                                         cartItem.productPrice
                                     ).toFixed(2)}
                                 </p>
@@ -195,12 +212,13 @@ function CartPage() {
                                                     cartItem.quantity - 1
                                                 )
                                             }
-                                            aria-label="Decrease quantity"
                                         >
                                             <FaMinus />
                                         </button>
 
-                                        <span>{cartItem.quantity}</span>
+                                        <span>
+                                            {cartItem.quantity}
+                                        </span>
 
                                         <button
                                             type="button"
@@ -213,7 +231,6 @@ function CartPage() {
                                                     cartItem.quantity + 1
                                                 )
                                             }
-                                            aria-label="Increase quantity"
                                         >
                                             <FaPlus />
                                         </button>
@@ -245,7 +262,7 @@ function CartPage() {
                                 $
                                 {Number(
                                     cartItem.productPrice *
-                                        cartItem.quantity
+                                    cartItem.quantity
                                 ).toFixed(2)}
                             </p>
                         </article>
@@ -262,7 +279,9 @@ function CartPage() {
 
                     <div className="cart-summary-total">
                         <span>Total</span>
-                        <strong>${totalAmount.toFixed(2)}</strong>
+                        <strong>
+                            ${totalAmount.toFixed(2)}
+                        </strong>
                     </div>
 
                     <button

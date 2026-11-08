@@ -128,6 +128,12 @@ if (app.Environment.IsDevelopment())
         options.WithTitle("ECommerce Product Service");
     });
 }
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ProductDbContext>();
+
+    dbContext.Database.Migrate();
+}
 
 app.UseHttpsRedirection();
 

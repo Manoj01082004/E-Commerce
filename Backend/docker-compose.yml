@@ -1,0 +1,77 @@
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: ecommerce-sql-server
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "ECommerceSqlPassword123!"
+    ports:
+      - "5000:1433"
+    volumes:
+      - sql-server-data:/var/opt/mssql
+
+  user-service:
+    build:
+      context: .
+      dockerfile: UserServices/Dockerfile
+    image: ecommerce-user-service
+    container_name: ecommerce-user-service
+    depends_on:
+      - sql-server
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sql-server,1433;Database=ECommerceUserDb;User Id=sa;Password=ECommerceSqlPassword123!;TrustServerCertificate=True"
+    ports:
+      - "5001:8080"
+
+  product-service:
+    build:
+      context: .
+      dockerfile: ProductServices/Dockerfile
+    image: ecommerce-product-service
+    container_name: ecommerce-product-service
+    depends_on:
+      - sql-server
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sql-server,1433;Database=ECommerceProductDb;User Id=sa;Password=ECommerceSqlPassword123!;TrustServerCertificate=True"
+    ports:
+      - "5002:8080"
+
+  order-service:
+    build:
+      context: .
+      dockerfile: OrderServices/Dockerfile
+    image: ecommerce-order-service
+    container_name: ecommerce-order-service
+    depends_on:
+      - sql-server
+      - product-service
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sql-server,1433;Database=ECommerceOrderDb;User Id=sa;Password=ECommerceSqlPassword123!;TrustServerCertificate=True"
+      Services__ProductServiceUrl: "http://product-service:8080/"
+    ports:
+      - "5003:8080"
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Gateway/Dockerfile
+    image: ecommerce-api-gateway
+    container_name: ecommerce-api-gateway
+    depends_on:
+      - user-service
+      - product-service
+      - order-service
+    restart: on-failure
+    volumes:
+      - ./Gateway/ocelot.Docker.json:/app/ocelot.json:ro
+    ports:
+      - "7072:8080"
+
+volumes:
+  sql-server-data:

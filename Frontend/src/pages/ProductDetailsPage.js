@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaCartShopping, FaMinus, FaPlus } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
 import "./ProductDetailsPage.css";
 
@@ -12,7 +12,13 @@ const fallbackImage =
 function ProductDetailsPage() {
     const { productId } = useParams();
     const navigate = useNavigate();
+
     const { isLoggedIn } = useAuth();
+
+    const {
+        products: productService,
+        cart: cartService
+    } = useApi();
 
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
@@ -20,27 +26,27 @@ function ProductDetailsPage() {
     const [addingToCart, setAddingToCart] = useState(false);
     const [error, setError] = useState("");
 
-    const loadProduct = useCallback(async () => {
-        try {
-            setLoading(true);
-            setError("");
-
-            const response = await axiosClient.get(`/products/${productId}`);
-
-            setProduct(response.data);
-        } catch (requestError) {
-            setError(
-                requestError.response?.data ||
-                "Unable to load product details."
-            );
-        } finally {
-            setLoading(false);
-        }
-    }, [productId]);
-
     useEffect(() => {
+        async function loadProduct() {
+            try {
+                setLoading(true);
+                setError("");
+
+                const productData = await productService.getById(productId);
+
+                setProduct(productData);
+            } catch (requestError) {
+                setError(
+                    requestError.message ||
+                    "Unable to load product details."
+                );
+            } finally {
+                setLoading(false);
+            }
+        }
+
         loadProduct();
-    }, [loadProduct]);
+    }, [productId, productService]);
 
     function decreaseQuantity() {
         if (quantity > 1) {
@@ -63,18 +69,22 @@ function ProductDetailsPage() {
             return;
         }
 
+        if (!product) {
+            return;
+        }
+
         try {
             setAddingToCart(true);
 
-            await axiosClient.post("/cartitems", {
-                productId: product.productId,
+            await cartService.addItem(
+                product.productId,
                 quantity
-            });
+            );
 
             toast.success(`${product.name} added to cart.`);
         } catch (requestError) {
             toast.error(
-                requestError.response?.data ||
+                requestError.message ||
                 "Unable to add product to cart."
             );
         } finally {
@@ -90,20 +100,16 @@ function ProductDetailsPage() {
         );
     }
 
-    if (error) {
+    if (error || !product) {
         return (
             <section className="product-details-error">
-                <p>{error}</p>
+                <p>{error || "Product not found."}</p>
 
                 <Link to="/products" className="back-button">
                     ← Back to Products
                 </Link>
             </section>
         );
-    }
-
-    if (!product) {
-        return null;
     }
 
     return (
@@ -181,6 +187,7 @@ function ProductDetailsPage() {
                         disabled={addingToCart}
                     >
                         <FaCartShopping />
+
                         {addingToCart
                             ? "Adding to Cart..."
                             : "Add to Cart"}

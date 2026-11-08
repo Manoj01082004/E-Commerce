@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaLock } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./CheckoutPage.css";
 
 function CheckoutPage() {
     const navigate = useNavigate();
+
+    const {
+        cart: cartService,
+        orders: orderService
+    } = useApi();
 
     const [cartItems, setCartItems] = useState([]);
     const [shippingAddress, setShippingAddress] = useState("");
@@ -15,17 +20,14 @@ function CheckoutPage() {
     const [placingOrder, setPlacingOrder] = useState(false);
 
     useEffect(() => {
-        loadCartItems();
-    }, []);
-
     async function loadCartItems() {
         try {
-            const response = await axiosClient.get("/cartitems");
+            const items = await cartService.getMyCart();
 
-            setCartItems(response.data);
-        } catch (requestError) {
+            setCartItems(items);
+        } catch (error) {
             toast.error(
-                requestError.response?.data ||
+                error.message ||
                 "Unable to load your cart."
             );
         } finally {
@@ -33,9 +35,15 @@ function CheckoutPage() {
         }
     }
 
+    loadCartItems();
+}, [cartService]);
+
     function getTotalAmount() {
         return cartItems.reduce((total, cartItem) => {
-            return total + cartItem.productPrice * cartItem.quantity;
+            return total + (
+                cartItem.productPrice *
+                cartItem.quantity
+            );
         }, 0);
     }
 
@@ -55,21 +63,16 @@ function CheckoutPage() {
         try {
             setPlacingOrder(true);
 
-            const response = await axiosClient.post(
-                "/orders/create-from-cart",
-                {
-                    shippingAddress: shippingAddress.trim()
-                }
+            const order = await orderService.checkout(
+                shippingAddress.trim()
             );
-
-            const order = response.data;
 
             toast.success("Order placed successfully.");
 
             navigate(`/orders/${order.id}`);
-        } catch (requestError) {
+        } catch (error) {
             toast.error(
-                requestError.response?.data ||
+                error.message ||
                 "Unable to place your order."
             );
         } finally {
@@ -91,10 +94,14 @@ function CheckoutPage() {
                 <h1>Your Cart is Empty</h1>
 
                 <p>
-                    Add products to your cart before proceeding to checkout.
+                    Add products to your cart before proceeding
+                    to checkout.
                 </p>
 
-                <Link to="/products" className="checkout-shop-button">
+                <Link
+                    to="/products"
+                    className="checkout-shop-button"
+                >
                     Continue Shopping
                 </Link>
             </section>
@@ -109,7 +116,9 @@ function CheckoutPage() {
             </Link>
 
             <div className="checkout-header">
-                <p className="checkout-eyebrow">SECURE CHECKOUT</p>
+                <p className="checkout-eyebrow">
+                    SECURE CHECKOUT
+                </p>
 
                 <h1>Checkout</h1>
             </div>
@@ -123,6 +132,7 @@ function CheckoutPage() {
 
                     <label className="checkout-label">
                         Shipping Address
+
                         <textarea
                             value={shippingAddress}
                             onChange={(event) =>
@@ -137,6 +147,7 @@ function CheckoutPage() {
 
                     <label className="checkout-label">
                         Phone Number
+
                         <input
                             type="tel"
                             value={phoneNumber}
@@ -159,6 +170,7 @@ function CheckoutPage() {
                         disabled={placingOrder}
                     >
                         <FaLock />
+
                         {placingOrder
                             ? "Placing Order..."
                             : "Place Order"}
@@ -178,10 +190,12 @@ function CheckoutPage() {
                                     <p>{cartItem.productName}</p>
 
                                     <span>
-                                        ${Number(
+                                        $
+                                        {Number(
                                             cartItem.productPrice
-                                        ).toFixed(2)}{" "}
-                                        × {cartItem.quantity}
+                                        ).toFixed(2)}
+                                        {" × "}
+                                        {cartItem.quantity}
                                     </span>
                                 </div>
 
@@ -189,7 +203,7 @@ function CheckoutPage() {
                                     $
                                     {Number(
                                         cartItem.productPrice *
-                                            cartItem.quantity
+                                        cartItem.quantity
                                     ).toFixed(2)}
                                 </strong>
                             </div>

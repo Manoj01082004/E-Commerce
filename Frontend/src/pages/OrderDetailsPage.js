@@ -1,37 +1,41 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft, FaBoxOpen } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import "./OrderDetailsPage.css";
 
 function OrderDetailsPage() {
     const { orderId } = useParams();
+    const { orders: orderService } = useApi();
 
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    const loadOrderDetails = useCallback(async () => {
-        try {
-            const response = await axiosClient.get(`/orders/${orderId}`);
-
-            setOrder(response.data);
-        } catch (requestError) {
-            const message =
-                requestError.response?.data ||
-                "Unable to load order details.";
-
-            setError(message);
-            toast.error(message);
-        } finally {
-            setLoading(false);
-        }
-    }, [orderId]);
-
     useEffect(() => {
+        async function loadOrderDetails() {
+            try {
+                setLoading(true);
+                setError("");
+
+                const orderData = await orderService.getById(orderId);
+
+                setOrder(orderData);
+            } catch (requestError) {
+                const message =
+                    requestError.message ||
+                    "Unable to load order details.";
+
+                setError(message);
+                toast.error(message);
+            } finally {
+                setLoading(false);
+            }
+        }
+
         loadOrderDetails();
-    }, [loadOrderDetails]);
+    }, [orderId, orderService]);
 
     function formatDate(dateValue) {
         if (!dateValue) {
@@ -49,10 +53,6 @@ function OrderDetailsPage() {
         return status
             ? `order-details-status ${status.toLowerCase()}`
             : "order-details-status";
-    }
-
-    function getOrderItems() {
-        return order.orderItems || [];
     }
 
     if (loading) {
@@ -85,7 +85,9 @@ function OrderDetailsPage() {
 
             <div className="order-details-header">
                 <div>
-                    <p className="order-details-eyebrow">ORDER DETAILS</p>
+                    <p className="order-details-eyebrow">
+                        ORDER DETAILS
+                    </p>
 
                     <h1>{order.orderNumber}</h1>
 
@@ -125,7 +127,7 @@ function OrderDetailsPage() {
                     <h2>Order Items</h2>
                 </div>
 
-                {getOrderItems().length === 0 ? (
+                {!order.orderItems || order.orderItems.length === 0 ? (
                     <p className="order-details-message">
                         No order items found.
                     </p>
@@ -138,7 +140,7 @@ function OrderDetailsPage() {
                             <span>Total</span>
                         </div>
 
-                        {getOrderItems().map((item) => (
+                        {order.orderItems.map((item) => (
                             <div
                                 className="order-item-row"
                                 key={item.id}

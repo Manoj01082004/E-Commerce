@@ -98,6 +98,13 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<UserDbContext>();
+
+    dbContext.Database.Migrate();
+}
+
 
 app.UseHttpsRedirection();
 

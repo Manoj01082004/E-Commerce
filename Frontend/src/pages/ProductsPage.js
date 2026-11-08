@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import axiosClient from "../api/axiosClient";
+import { useApi } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
 import ProductCard from "../components/ProductCard";
 import "./ProductsPage.css";
@@ -11,6 +11,9 @@ function ProductsPage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const { isLoggedIn } = useAuth();
 
+    const { products: productService, categories: categoryService, cart: cartService } =
+        useApi();
+
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -19,29 +22,30 @@ function ProductsPage() {
     const selectedCategoryId = searchParams.get("categoryId") || "";
 
     useEffect(() => {
-        loadPageData();
-    }, []);
-
     async function loadPageData() {
         try {
-            const [productsResponse, categoriesResponse] = await Promise.all([
-                axiosClient.get("/products"),
-                axiosClient.get("/categories")
+            setLoading(true);
+            setError("");
+
+            const [productData, categoryData] = await Promise.all([
+                productService.getAll(),
+                categoryService.getAll()
             ]);
 
-            setProducts(productsResponse.data);
-            setCategories(categoriesResponse.data);
-        } catch (requestError) {
-            console.error("Unable to load products:", requestError);
-
+            setProducts(productData);
+            setCategories(categoryData);
+        } catch (error) {
             setError(
-                requestError.response?.data ||
-                "Unable to load products. Please try again."
+                error.message ||
+                "Unable to load products."
             );
         } finally {
             setLoading(false);
         }
     }
+
+    loadPageData();
+}, [productService, categoryService]);
 
     function handleCategoryChange(event) {
         const categoryId = event.target.value;
@@ -51,9 +55,7 @@ function ProductsPage() {
             return;
         }
 
-        setSearchParams({
-            categoryId
-        });
+        setSearchParams({ categoryId });
     }
 
     function getIncludedCategoryIds() {
@@ -64,9 +66,7 @@ function ProductsPage() {
         const categoryId = Number(selectedCategoryId);
 
         const childCategoryIds = categories
-            .filter((category) => {
-                return category.parentCategoryId === categoryId;
-            })
+            .filter((category) => category.parentCategoryId === categoryId)
             .map((category) => category.id);
 
         return [categoryId, ...childCategoryIds];
@@ -89,41 +89,25 @@ function ProductsPage() {
     async function handleAddToCart(product) {
         if (!isLoggedIn) {
             toast.info("Please login before adding items to your cart.");
-
             navigate("/login");
-
             return;
         }
 
         try {
-            await axiosClient.post("/cartitems", {
-                productId: product.productId,
-                quantity: 1
-            });
+            await cartService.addItem(product.productId, 1);
 
             toast.success(`${product.name} added to cart.`);
         } catch (requestError) {
-            toast.error(
-                requestError.response?.data ||
-                "Unable to add product to cart."
-            );
+            toast.error(requestError.message);
         }
     }
 
     if (loading) {
-        return (
-            <p className="products-message">
-                Loading products...
-            </p>
-        );
+        return <p className="products-message">Loading products...</p>;
     }
 
     if (error) {
-        return (
-            <p className="products-error">
-                {error}
-            </p>
-        );
+        return <p className="products-error">{error}</p>;
     }
 
     return (
@@ -153,12 +137,11 @@ function ProductsPage() {
 
                         {categories
                             .filter((category) => category.isActive)
-                            .sort((firstCategory, secondCategory) => {
-                                return (
+                            .sort(
+                                (firstCategory, secondCategory) =>
                                     firstCategory.displayOrder -
                                     secondCategory.displayOrder
-                                );
-                            })
+                            )
                             .map((category) => (
                                 <option
                                     key={category.id}

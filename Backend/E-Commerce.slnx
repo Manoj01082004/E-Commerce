@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".dockerignore" />
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Project Path="Gateway/Gateway.csproj" Id="10848671-06ee-4edf-847a-519a705c3ddc" />
   <Project Path="OrderServices/OrderServices.csproj" Id="0b142308-08d9-4b72-a2ac-8fabed717e6d" />
   <Project Path="ProductServices/ProductServices.csproj" Id="7573faa5-9635-4f4c-ab3c-77d18c768ce7" />
