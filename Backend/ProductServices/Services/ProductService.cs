@@ -19,6 +19,10 @@ namespace ProductServices.Services
             return await _repo.GetAllProductsAsync();
 
         }
+        public async Task<ICollection<Product>> SearchProductsAsync(string? searchQuery)
+        {
+            return await _repo.SearchProductsAsync(searchQuery);
+        }
         public async Task<Product?> GetProductByIdAsync(int id)
         {
             return await _repo.GetProductByIdAsync(id);

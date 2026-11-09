@@ -22,6 +22,27 @@ namespace ProductServices.Repositories
             .Include(product => product.Inventory)
             .ToListAsync();
         }
+        public async Task<ICollection<Product>> SearchProductsAsync(string? searchQuery)
+        {
+            IQueryable<Product> products = _db.Products
+                .Where(product => product.IsActive);
+
+            var query = searchQuery?.Trim();
+
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                products = products.Where(product =>
+                    product.Name.Contains(query) ||
+                    (product.Description != null &&
+                     product.Description.Contains(query)));
+            }
+
+            return await products
+                .Include(product => product.Category)
+                .Include(product => product.Inventory)
+                .OrderBy(product => product.Name)
+                .ToListAsync();
+        }
         public async Task<Product?> GetProductByIdAsync(int id)
         {
             return await _db.Products

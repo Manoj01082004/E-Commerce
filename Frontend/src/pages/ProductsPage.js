@@ -1,61 +1,99 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import ProductCard from "../components/ProductCard";
 import { useApi } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
-import ProductCard from "../components/ProductCard";
 import "./ProductsPage.css";
 
 function ProductsPage() {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
     const { isLoggedIn } = useAuth();
 
-    const { products: productService, categories: categoryService, cart: cartService } =
-        useApi();
+    const {
+        products: productService,
+        categories: categoryService,
+        cart: cartService
+    } = useApi();
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searching, setSearching] = useState(false);
     const [error, setError] = useState("");
 
-    const selectedCategoryId = searchParams.get("categoryId") || "";
+    const selectedCategoryId =
+        searchParams.get("categoryId") || "";
+
+    const searchQuery =
+        searchParams.get("search") || "";
 
     useEffect(() => {
-    async function loadPageData() {
-        try {
-            setLoading(true);
-            setError("");
+        async function loadCategories() {
+            try {
+                const categoryData = await categoryService.getAll();
 
-            const [productData, categoryData] = await Promise.all([
-                productService.getAll(),
-                categoryService.getAll()
-            ]);
-
-            setProducts(productData);
-            setCategories(categoryData);
-        } catch (error) {
-            setError(
-                error.message ||
-                "Unable to load products."
-            );
-        } finally {
-            setLoading(false);
+                setCategories(categoryData);
+            } catch (requestError) {
+                setError(
+                    requestError.message ||
+                    "Unable to load categories."
+                );
+            }
         }
-    }
 
-    loadPageData();
-}, [productService, categoryService]);
+        loadCategories();
+    }, [categoryService]);
+
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                setLoading(true);
+                setError("");
+
+                let productData;
+
+                if (searchQuery.trim()) {
+                    setSearching(true);
+
+                    productData = await productService.search(
+                        searchQuery.trim()
+                    );
+                } else {
+                    productData = await productService.getAll();
+                }
+
+                setProducts(productData);
+            } catch (requestError) {
+                setError(
+                    requestError.message ||
+                    "Unable to load products."
+                );
+            } finally {
+                setLoading(false);
+                setSearching(false);
+            }
+        }
+
+        loadProducts();
+    }, [searchQuery, productService]);
 
     function handleCategoryChange(event) {
         const categoryId = event.target.value;
 
-        if (!categoryId) {
-            setSearchParams({});
-            return;
+        const updatedSearchParams = new URLSearchParams();
+
+        if (searchQuery) {
+            updatedSearchParams.set("search", searchQuery);
         }
 
-        setSearchParams({ categoryId });
+        if (categoryId) {
+            updatedSearchParams.set("categoryId", categoryId);
+        }
+
+        setSearchParams(updatedSearchParams);
     }
 
     function getIncludedCategoryIds() {
@@ -66,7 +104,9 @@ function ProductsPage() {
         const categoryId = Number(selectedCategoryId);
 
         const childCategoryIds = categories
-            .filter((category) => category.parentCategoryId === categoryId)
+            .filter((category) =>
+                category.parentCategoryId === categoryId
+            )
             .map((category) => category.id);
 
         return [categoryId, ...childCategoryIds];
@@ -89,7 +129,9 @@ function ProductsPage() {
     async function handleAddToCart(product) {
         if (!isLoggedIn) {
             toast.info("Please login before adding items to your cart.");
+
             navigate("/login");
+
             return;
         }
 
@@ -98,16 +140,27 @@ function ProductsPage() {
 
             toast.success(`${product.name} added to cart.`);
         } catch (requestError) {
-            toast.error(requestError.message);
+            toast.error(
+                requestError.message ||
+                "Unable to add product to cart."
+            );
         }
     }
 
     if (loading) {
-        return <p className="products-message">Loading products...</p>;
+        return (
+            <p className="products-message">
+                Loading products...
+            </p>
+        );
     }
 
     if (error) {
-        return <p className="products-error">{error}</p>;
+        return (
+            <p className="products-error">
+                {error}
+            </p>
+        );
     }
 
     return (
@@ -120,46 +173,63 @@ function ProductsPage() {
 
                     <h1>Products</h1>
 
+                    {searchQuery && (
+                        <p className="products-search-text">
+                            Search results for: <strong>{searchQuery}</strong>
+                        </p>
+                    )}
+
                     <p className="products-count">
                         {visibleProducts.length} product
                         {visibleProducts.length !== 1 ? "s" : ""} found
                     </p>
                 </div>
 
-                <label className="category-select-label">
-                    Category
+                <div className="products-filters">
+                    <label className="category-select-label">
+                        Category
 
-                    <select
-                        value={selectedCategoryId}
-                        onChange={handleCategoryChange}
-                    >
-                        <option value="">All Categories</option>
+                        <select
+                            value={selectedCategoryId}
+                            onChange={handleCategoryChange}
+                        >
+                            <option value="">All Categories</option>
 
-                        {categories
-                            .filter((category) => category.isActive)
-                            .sort(
-                                (firstCategory, secondCategory) =>
-                                    firstCategory.displayOrder -
-                                    secondCategory.displayOrder
-                            )
-                            .map((category) => (
-                                <option
-                                    key={category.id}
-                                    value={category.id}
-                                >
-                                    {category.parentCategoryId
-                                        ? `— ${category.name}`
-                                        : category.name}
-                                </option>
-                            ))}
-                    </select>
-                </label>
+                            {categories
+                                .filter((category) => category.isActive)
+                                .sort(
+                                    (firstCategory, secondCategory) =>
+                                        firstCategory.displayOrder -
+                                        secondCategory.displayOrder
+                                )
+                                .map((category) => (
+                                    <option
+                                        key={category.id}
+                                        value={category.id}
+                                    >
+                                        {category.parentCategoryId
+                                            ? `— ${category.name}`
+                                            : category.name}
+                                    </option>
+                                ))}
+                        </select>
+                    </label>
+                </div>
             </div>
+
+            {searching && (
+                <p className="searching-message">
+                    Searching products...
+                </p>
+            )}
 
             {visibleProducts.length === 0 ? (
                 <div className="no-products">
                     <h2>No products found</h2>
-                    <p>Try choosing a different category.</p>
+
+                    <p>
+                        Try another search word or choose a different category.
+                    </p>
                 </div>
             ) : (
                 <div className="products-grid">

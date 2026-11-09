@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
     FaBoxOpen,
     FaCartShopping,
     FaHouse,
+    FaMagnifyingGlass,
     FaRightFromBracket,
     FaUser,
     FaUserPlus
@@ -14,8 +16,11 @@ import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
     const navigate = useNavigate();
+
     const { auth: authService } = useApi();
     const { user, isLoggedIn, logout } = useAuth();
+
+    const [searchQuery, setSearchQuery] = useState("");
 
     async function handleLogout() {
         try {
@@ -29,11 +34,50 @@ function Navbar() {
         }
     }
 
+    function handleSearch(event) {
+        event.preventDefault();
+
+        const query = searchQuery.trim();
+
+        if (!query) {
+            navigate("/products");
+            return;
+        }
+
+        navigate(`/products?search=${encodeURIComponent(query)}`);
+
+        setSearchQuery("");
+    }
+
     return (
         <header className="navbar">
             <Link to="/" className="brand">
                 E-Commerce
             </Link>
+
+            <form
+                className="navbar-search-form"
+                onSubmit={handleSearch}
+            >
+                <input
+                    type="search"
+                    value={searchQuery}
+                    onChange={(event) =>
+                        setSearchQuery(event.target.value)
+                    }
+                    placeholder="Search products..."
+                    maxLength="100"
+                    aria-label="Search products"
+                />
+
+                <button
+                    type="submit"
+                    className="navbar-search-button"
+                    aria-label="Search"
+                >
+                    <FaMagnifyingGlass />
+                </button>
+            </form>
 
             <nav className="nav-links">
                 <Link to="/">

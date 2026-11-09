@@ -32,6 +32,39 @@ namespace ProductServices.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [AllowAnonymous]
+        [HttpGet("search")]
+        /// <summary>
+        /// Searches active products by name or description.
+        /// </summary>
+        /// <param name="query">
+        /// An optional search term. When omitted or empty, all active products are returned.
+        /// </param>
+        /// <returns>A collection of matching product details ordered by name.</returns>
+        /// <response code="200">Returns the matching products.</response>
+        /// <response code="400">The search query exceeds 100 characters.</response>
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> SearchProducts([FromQuery] string? query)
+        {
+            try
+            {
+                if (query?.Length > 100)
+                {
+                    return BadRequest("Search query cannot exceed 100 characters.");
+                }
+
+                var products = await _service.SearchProductsAsync(query);
+
+                var productDTOs = _mapper.Map<IEnumerable<ProductDTO>>(products);
+
+                return Ok(productDTOs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Internal server error: {ex.Message}");
+            }
+        }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {

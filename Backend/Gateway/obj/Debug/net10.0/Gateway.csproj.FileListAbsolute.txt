@@ -51,3 +51,4 @@ C:\Users\ManojHK\source\repos\E-Commerce\Backend\Gateway\obj\Debug\net10.0\refin
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\Gateway\obj\Debug\net10.0\Gateway.pdb
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\Gateway\obj\Debug\net10.0\Gateway.genruntimeconfig.cache
 C:\Users\ManojHK\source\repos\E-Commerce\Backend\Gateway\obj\Debug\net10.0\ref\Gateway.dll
+C:\Users\ManojHK\source\repos\E-Commerce\Backend\Gateway\bin\Debug\net10.0\ocelot.Docker.json
