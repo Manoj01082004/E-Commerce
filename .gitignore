@@ -1,0 +1,17 @@
+# Visual Studio local files
+.vs/
+**/.vs/
+
+# .NET build files
+**/bin/
+**/obj/
+
+# React dependencies/build files
+Frontend/node_modules/
+Frontend/build/
+
+# Environment files
+.env
+.env.local
+**/.env
+**/.env.local
