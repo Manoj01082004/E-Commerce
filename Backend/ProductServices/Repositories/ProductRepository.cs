@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks; // add this if missing
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace ProductServices.Repositories
 {
@@ -22,9 +23,11 @@ namespace ProductServices.Repositories
             .Include(product => product.Inventory)
             .ToListAsync();
         }
-        public async Task<ICollection<Product>> SearchProductsAsync(string? searchQuery)
+        public async Task<ICollection<Product>> SearchProductsAsync(
+    string? searchQuery)
         {
             IQueryable<Product> products = _db.Products
+                .AsNoTracking()
                 .Where(product => product.IsActive);
 
             var query = searchQuery?.Trim();
@@ -32,9 +35,9 @@ namespace ProductServices.Repositories
             if (!string.IsNullOrWhiteSpace(query))
             {
                 products = products.Where(product =>
-                    product.Name.Contains(query) ||
+                    EF.Functions.Like(product.Name, $"%{query}%") ||
                     (product.Description != null &&
-                     product.Description.Contains(query)));
+                     EF.Functions.Like(product.Description, $"%{query}%")));
             }
 
             return await products
