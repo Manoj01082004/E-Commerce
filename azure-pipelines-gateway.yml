@@ -14,7 +14,8 @@ pool:
 variables:
   buildConfiguration: Release
   projectPath: Backend/Gateway/Gateway.csproj
-  imageName: ecommerce-api-gateway
+  dockerfilePath: Backend/Gateway/Dockerfile
+  imageRepository: ecommerce-api-gateway
 
 steps:
   - task: UseDotNet@2
@@ -31,7 +32,14 @@ steps:
       dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
     displayName: Build Gateway
 
-  - script: |
-      docker build -f Gateway/Dockerfile -t $(imageName):$(Build.BuildId) .
-    workingDirectory: Backend
-    displayName: Build Gateway Docker image
+  - task: Docker@2
+    displayName: Build and push Gateway image to ACR
+    inputs:
+      containerRegistry: AzureContainerRegistryConnection
+      repository: $(imageRepository)
+      command: buildAndPush
+      Dockerfile: $(dockerfilePath)
+      buildContext: Backend
+      tags: |
+        $(Build.BuildId)
+        latest

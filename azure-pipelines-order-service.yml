@@ -14,7 +14,8 @@ pool:
 variables:
   buildConfiguration: Release
   projectPath: Backend/OrderServices/OrderServices.csproj
-  imageName: ecommerce-order-service
+  dockerfilePath: Backend/OrderServices/Dockerfile
+  imageRepository: ecommerce-order-service
 
 steps:
   - task: UseDotNet@2
@@ -31,7 +32,14 @@ steps:
       dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
     displayName: Build Order Service
 
-  - script: |
-      docker build -f OrderServices/Dockerfile -t $(imageName):$(Build.BuildId) .
-    workingDirectory: Backend
-    displayName: Build Order Service Docker image
+  - task: Docker@2
+    displayName: Build and push Order Service image to ACR
+    inputs:
+      containerRegistry: AzureContainerRegistryConnection
+      repository: $(imageRepository)
+      command: buildAndPush
+      Dockerfile: $(dockerfilePath)
+      buildContext: Backend
+      tags: |
+        $(Build.BuildId)
+        latest

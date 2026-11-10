@@ -14,7 +14,8 @@ pool:
 variables:
   buildConfiguration: Release
   projectPath: Backend/UserServices/UserServices.csproj
-  imageName: ecommerce-user-service
+  dockerfilePath: Backend/UserServices/Dockerfile
+  imageRepository: ecommerce-user-service
 
 steps:
   - task: UseDotNet@2
@@ -31,7 +32,14 @@ steps:
       dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
     displayName: Build User Service
 
-  - script: |
-      docker build -f UserServices/Dockerfile -t $(imageName):$(Build.BuildId) .
-    workingDirectory: Backend
-    displayName: Build User Service Docker image
+  - task: Docker@2
+    displayName: Build and push User Service image to ACR
+    inputs:
+      containerRegistry: AzureContainerRegistryConnection
+      repository: $(imageRepository)
+      command: buildAndPush
+      Dockerfile: $(dockerfilePath)
+      buildContext: Backend
+      tags: |
+        $(Build.BuildId)
+        latest
