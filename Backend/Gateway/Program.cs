@@ -6,8 +6,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var ocelotConfigurationFile = builder.Environment.IsProduction()
+    ? "ocelot.Azure.json"
+    : "ocelot.json";
+
 builder.Configuration.AddJsonFile(
-    "ocelot.json",
+    ocelotConfigurationFile,
     optional: false,
     reloadOnChange: true);
 
