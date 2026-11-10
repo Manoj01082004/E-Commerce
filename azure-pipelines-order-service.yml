@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - microservices
+  paths:
+    include:
+      - Backend/OrderServices/**
+      - NuGet.Config
+      - azure-pipelines-order-service.yml
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: Release
+  projectPath: Backend/OrderServices/OrderServices.csproj
+  imageName: ecommerce-order-service
+
+steps:
+  - task: UseDotNet@2
+    displayName: Install .NET 10 SDK
+    inputs:
+      packageType: sdk
+      version: 10.x
+
+  - script: |
+      dotnet restore $(projectPath) --configfile NuGet.Config
+    displayName: Restore Order Service packages
+
+  - script: |
+      dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
+    displayName: Build Order Service
+
+  - script: |
+      docker build -f OrderServices/Dockerfile -t $(imageName):$(Build.BuildId) .
+    workingDirectory: Backend
+    displayName: Build Order Service Docker image

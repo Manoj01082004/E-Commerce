@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - microservices
+  paths:
+    include:
+      - Backend/Gateway/**
+      - NuGet.Config
+      - azure-pipelines-gateway.yml
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: Release
+  projectPath: Backend/Gateway/Gateway.csproj
+  imageName: ecommerce-api-gateway
+
+steps:
+  - task: UseDotNet@2
+    displayName: Install .NET 10 SDK
+    inputs:
+      packageType: sdk
+      version: 10.x
+
+  - script: |
+      dotnet restore $(projectPath) --configfile NuGet.Config
+    displayName: Restore Gateway packages
+
+  - script: |
+      dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
+    displayName: Build Gateway
+
+  - script: |
+      docker build -f Gateway/Dockerfile -t $(imageName):$(Build.BuildId) .
+    workingDirectory: Backend
+    displayName: Build Gateway Docker image

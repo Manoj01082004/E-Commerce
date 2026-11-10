@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - microservices
+  paths:
+    include:
+      - Backend/ProductServices/**
+      - NuGet.Config
+      - azure-pipelines-product-service.yml
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: Release
+  projectPath: Backend/ProductServices/ProductServices.csproj
+  imageName: ecommerce-product-service
+
+steps:
+  - task: UseDotNet@2
+    displayName: Install .NET 10 SDK
+    inputs:
+      packageType: sdk
+      version: 10.x
+
+  - script: |
+      dotnet restore $(projectPath) --configfile NuGet.Config
+    displayName: Restore Product Service packages
+
+  - script: |
+      dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
+    displayName: Build Product Service
+
+  - script: |
+      docker build -f ProductServices/Dockerfile -t $(imageName):$(Build.BuildId) .
+    workingDirectory: Backend
+    displayName: Build Product Service Docker image

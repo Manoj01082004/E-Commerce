@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - microservices
+  paths:
+    include:
+      - Backend/UserServices/**
+      - NuGet.Config
+      - azure-pipelines-user-service.yml
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: Release
+  projectPath: Backend/UserServices/UserServices.csproj
+  imageName: ecommerce-user-service
+
+steps:
+  - task: UseDotNet@2
+    displayName: Install .NET 10 SDK
+    inputs:
+      packageType: sdk
+      version: 10.x
+
+  - script: |
+      dotnet restore $(projectPath) --configfile NuGet.Config
+    displayName: Restore User Service packages
+
+  - script: |
+      dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
+    displayName: Build User Service
+
+  - script: |
+      docker build -f UserServices/Dockerfile -t $(imageName):$(Build.BuildId) .
+    workingDirectory: Backend
+    displayName: Build User Service Docker image
