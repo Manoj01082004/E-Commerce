@@ -77,7 +77,36 @@
         }
       ],
       "UpstreamPathTemplate": "/api/categories",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 10
+    },
+    {
+      "DownstreamPathTemplate": "/api/categories/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/categories/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 10
+    },
+    {
+      "DownstreamPathTemplate": "/api/categories",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/categories",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/categories/{everything}",
@@ -89,7 +118,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/categories/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "Priority": 0,
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -105,7 +135,49 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 10
+    },
+    {
+      "DownstreamPathTemplate": "/api/products/search",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/search",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 20
+    },
+    {
+      "DownstreamPathTemplate": "/api/products/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 10
+    },
+    {
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/products/{everything}",
@@ -117,7 +189,24 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "Priority": 0,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/inventories",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product-service.internal.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/inventories",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -132,7 +221,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/inventories/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -232,6 +321,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:7072"
+    "BaseUrl": "https://api-gateway.wonderfulhill-5bfa2542.eastus.azurecontainerapps.io"
   }
 }
